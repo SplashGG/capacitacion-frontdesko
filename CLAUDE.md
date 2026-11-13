@@ -39,6 +39,7 @@ Cada página es un tutorial corto con **capturas reales** de FrontDesko, pasos n
 - Imágenes en `img/<tema>/NN-descripcion.jpg`.
 - Marcadores sobre capturas: `<span class="marca" style="left:X%;top:Y%" data-n="1"></span>` dentro de `.captura`, con X/Y en porcentaje del tamaño de la imagen (coordenada px ÷ ancho/alto de la captura).
 - Debe imprimirse bien (hay estilos `@media print`).
+- Cada página de tutorial incluye `<script src="js/visor.js" defer></script>` en el `<head>`: al hacer clic en una `.captura` se abre un visor a pantalla completa con zoom (rueda, pellizco, clic, botones +/−) que conserva los marcadores.
 
 ## Cómo se toman las capturas
 - **Capturas de la interfaz real, NO del recorrido guiado.** Los recorridos y tareas guiadas del Centro de aprendizaje de FrontDesko se usan solo como **guía**: para saber qué temas, pantallas y botones hay que enseñar y en qué orden. Después se navega a esas pantallas y se captura la interfaz normal, sin las ventanas ni el oscurecido del recorrido.

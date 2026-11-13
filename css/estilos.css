@@ -141,6 +141,32 @@ h3 { font-size: 20px; margin: 0 0 8px; color: var(--carbon); }
 @keyframes latido { 50% { box-shadow: 0 0 0 9px rgba(239, 154, 17, 0); } }
 @media (prefers-reduced-motion: reduce) { .marca { animation: none; } }
 
+/* ---------- Visor de capturas (js/visor.js) ---------- */
+.visor-abierto { overflow: hidden; }
+.visor { position: fixed; inset: 0; z-index: 100; background: #1a1715; display: flex; flex-direction: column; }
+.visor[hidden] { display: none; }
+.visor { animation: visor-fondo .3s ease both; }
+.visor-barra, .visor-ayuda { animation: visor-aparecer .35s ease both; }
+@keyframes visor-fondo { from { background-color: rgba(26, 23, 21, 0); } }
+@keyframes visor-aparecer { from { opacity: 0; } }
+@media (prefers-reduced-motion: reduce) { .visor, .visor-barra, .visor-ayuda { animation: none; } }
+.visor-barra { display: flex; align-items: center; gap: 12px; padding: 10px 16px; border-bottom: 1px solid rgba(255, 255, 255, .1); }
+.visor-titulo { flex: 1; min-width: 0; font-size: 15px; color: #e3ddd6; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.visor-botones { display: flex; gap: 6px; }
+.visor-botones button {
+  min-width: 42px; height: 42px; padding: 0 10px; border-radius: 8px; cursor: pointer;
+  border: 1px solid rgba(255, 255, 255, .22); background: rgba(255, 255, 255, .08); color: #fff;
+  font-family: inherit; font-size: 20px; font-weight: 600; line-height: 1;
+}
+.visor-botones button:hover, .visor-botones button:focus-visible { background: var(--naranja-fuerte); border-color: var(--naranja-fuerte); outline: none; }
+.visor-botones .visor-pct { font-size: 14px; min-width: 64px; }
+.visor-escena { flex: 1; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; touch-action: none; cursor: zoom-in; }
+.visor-escena.con-zoom { cursor: grab; }
+.visor-escena.con-zoom.arrastrando { cursor: grabbing; }
+.visor-lienzo { flex: none; transform-origin: center center; user-select: none; }
+.visor-lienzo img { border-radius: 6px; pointer-events: none; }
+.visor-ayuda { text-align: center; font-size: 13px; color: #a9a097; padding: 8px 16px 12px; }
+
 /* ---------- Mapa del menú ---------- */
 .mapa { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 12px; }
 .mapa .item { background: #fff; border: 1px solid var(--borde); border-radius: 10px; padding: 14px 16px; }
@@ -212,7 +238,7 @@ footer img { width: 22px; height: 22px; }
 @media print {
   body { background: #fff; font-size: 12pt; }
   .marca-hotel { position: static; box-shadow: none; }
-  .marca-hotel nav, .no-imprimir { display: none !important; }
+  .marca-hotel nav, .no-imprimir, .visor { display: none !important; }
   .cabecera { background: none; color: #000; padding: 0 0 12px; border-bottom: 2px solid var(--naranja); }
   .cabecera p.lead, .migas { color: #333; }
   .ficha { border-color: #999; }
