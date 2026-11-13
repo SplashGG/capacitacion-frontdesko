@@ -12,6 +12,7 @@ Cada página es un tutorial corto con **capturas reales** de FrontDesko, pasos n
 ## Reglas de redacción
 - Español neutro, trato de **tú**, frases cortas. Una acción por paso.
 - Botones y pestañas en **negrita** y con el texto exacto de la pantalla (`**Siguiente**`, `**Reservas**`).
+- Escribe siempre **«Tapechart (Calendario de reservas)»**, nunca «Tapechart» solo: es el nombre que usa FrontDesko, pero el equipo no lo conoce.
 - Explica la palabra técnica la primera vez (Tapechart, folio, OTA, sobreventa...). Si se repite, va al glosario.
 - Cada paso responde: **qué ves**, **qué haces** y **para qué te sirve en el turno**.
 - Avisa de lo que puede confundir (p. ej. pasos que el recorrido salta solo).
@@ -39,7 +40,21 @@ Cada página es un tutorial corto con **capturas reales** de FrontDesko, pasos n
 - Imágenes en `img/<tema>/NN-descripcion.jpg`.
 - Marcadores sobre capturas: `<span class="marca" style="left:X%;top:Y%" data-n="1"></span>` dentro de `.captura`, con X/Y en porcentaje del tamaño de la imagen (coordenada px ÷ ancho/alto de la captura).
 - Debe imprimirse bien (hay estilos `@media print`).
-- Cada página de tutorial incluye `<script src="js/visor.js" defer></script>` en el `<head>`: al hacer clic en una `.captura` se abre un visor a pantalla completa con zoom (rueda, pellizco, clic, botones +/−) que conserva los marcadores.
+- Cada página de tutorial incluye en el `<head>`, en este orden:
+  ```html
+  <script src="js/anotaciones.js" defer></script>
+  <script src="js/visor.js" defer></script>
+  ```
+  - `visor.js`: al hacer clic en una `.captura` se abre un visor a pantalla completa con zoom (rueda, pellizco, clic, botones +/−) que conserva los marcadores.
+  - `anotaciones.js`: al pasar el ratón por un marcador sale un globo con su explicación, también dentro del visor.
+- **Anotaciones (marcador + leyenda):** el texto se escribe una sola vez, en la `.leyenda` del mismo `.paso` (o `section`). El marcador `data-n="2"` muestra el punto de la leyenda cuyo `<span class="n">2</span>` coincide. Por eso cada marcador debe tener su punto en la leyenda con el mismo número, con esta forma:
+  ```html
+  <span class="marca" style="left:55.2%;top:23.3%" data-n="2"></span>
+  ...
+  <ul class="leyenda">
+    <li><span class="n">2</span><span><b>Título</b>: descripción.</span></li>
+  </ul>
+  ```
 
 ## Cómo se toman las capturas
 - **Capturas de la interfaz real, NO del recorrido guiado.** Los recorridos y tareas guiadas del Centro de aprendizaje de FrontDesko se usan solo como **guía**: para saber qué temas, pantallas y botones hay que enseñar y en qué orden. Después se navega a esas pantallas y se captura la interfaz normal, sin las ventanas ni el oscurecido del recorrido.

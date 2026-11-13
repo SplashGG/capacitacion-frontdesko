@@ -78,6 +78,8 @@ code { background: var(--naranja-claro); padding: 0 5px; border-radius: 4px; fon
 /* ---------- Secciones ---------- */
 main.contenedor { padding-top: 36px; padding-bottom: 64px; }
 section { margin: 0 0 52px; }
+/* Separadores horizontales entre secciones y entre pasos */
+main > section + section:not(.tarjeta), .paso + .paso { border-top: 1px solid #ddd2c3; padding-top: 40px; }
 h2 { font-size: 26px; line-height: 1.25; margin: 0 0 16px; color: var(--carbon); }
 h2::before { content: ""; display: block; width: 36px; height: 4px; border-radius: 2px; background: var(--naranja); margin-bottom: 10px; }
 h3 { font-size: 20px; margin: 0 0 8px; color: var(--carbon); }
@@ -107,7 +109,7 @@ h3 { font-size: 20px; margin: 0 0 8px; color: var(--carbon); }
 .paso .turno b { color: var(--salvia); }
 .leyenda { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 8px; }
 .leyenda li { display: grid; grid-template-columns: 26px 1fr; gap: 10px; align-items: start; }
-.leyenda .n { width: 24px; height: 24px; border-radius: 50%; background: var(--naranja); color: #fff; font-weight: 800; font-size: 13px; display: grid; place-items: center; margin-top: 2px; }
+.leyenda .n, .globo .n { width: 24px; height: 24px; border-radius: 50%; background: var(--naranja); color: #fff; font-weight: 800; font-size: 13px; display: grid; place-items: center; margin-top: 2px; }
 
 /* Imitan elementos de FrontDesko (se mantienen en azul como en el sistema) */
 .boton-ui { display: inline-block; background: #1a73d9; color: #fff; font-weight: 600; font-size: 14px; padding: 1px 10px; border-radius: 6px; white-space: nowrap; }
@@ -128,9 +130,31 @@ h3 { font-size: 20px; margin: 0 0 8px; color: var(--carbon); }
   transform: translate(-50%, -50%);
   border: 3px solid var(--naranja); border-radius: 50%;
   box-shadow: 0 0 0 4px rgba(239, 154, 17, .28);
-  pointer-events: none;
   animation: latido 1.8s ease-in-out infinite;
 }
+.marca[data-texto] { cursor: help; }
+.marca[data-texto]:hover { animation: none; border-color: var(--naranja-fuerte); box-shadow: 0 0 0 6px rgba(239, 154, 17, .4); }
+
+/* Globo de las anotaciones (js/anotaciones.js) */
+.globo {
+  position: fixed; z-index: 200; pointer-events: none;
+  max-width: min(320px, calc(100vw - 16px));
+  display: grid; grid-template-columns: 24px 1fr; gap: 10px; align-items: start;
+  padding: 12px 14px; border-radius: 10px;
+  background: var(--blanco); color: var(--texto);
+  border: 1px solid var(--borde); border-top: 3px solid var(--naranja);
+  box-shadow: 0 10px 30px rgba(43, 39, 36, .2);
+  font-size: 14px; line-height: 1.45;
+  animation: globo-entrar .15s ease-out;
+}
+.globo[hidden] { display: none; }
+.globo::after {
+  content: ""; position: absolute; left: var(--flecha, 50%); top: 100%; transform: translateX(-50%);
+  border: 7px solid transparent; border-top-color: var(--blanco);
+}
+.globo.debajo::after { top: auto; bottom: 100%; border-top-color: transparent; border-bottom-color: var(--naranja); }
+@keyframes globo-entrar { from { opacity: 0; transform: translateY(4px); } }
+@media (prefers-reduced-motion: reduce) { .globo { animation: none; } }
 .marca::after {
   content: attr(data-n);
   position: absolute; right: -14px; top: -14px;
@@ -238,7 +262,7 @@ footer img { width: 22px; height: 22px; }
 @media print {
   body { background: #fff; font-size: 12pt; }
   .marca-hotel { position: static; box-shadow: none; }
-  .marca-hotel nav, .no-imprimir, .visor { display: none !important; }
+  .marca-hotel nav, .no-imprimir, .visor, .globo { display: none !important; }
   .cabecera { background: none; color: #000; padding: 0 0 12px; border-bottom: 2px solid var(--naranja); }
   .cabecera p.lead, .migas { color: #333; }
   .ficha { border-color: #999; }
