@@ -42,7 +42,7 @@ Cada página es un tutorial corto con **capturas reales** de FrontDesko, pasos n
 
 ## Cómo se toman las capturas
 - **Capturas de la interfaz real, NO del recorrido guiado.** Los recorridos y tareas guiadas del Centro de aprendizaje de FrontDesko se usan solo como **guía**: para saber qué temas, pantallas y botones hay que enseñar y en qué orden. Después se navega a esas pantallas y se captura la interfaz normal, sin las ventanas ni el oscurecido del recorrido.
-  - Única excepción: cuando la página enseña a abrir el propio Centro de aprendizaje o un recorrido (captura del panel lateral del birrete).
+  - No enseñamos a usar los recorridos guiados de FrontDesko: nuestros tutoriales los toman como ejemplo y los mejoran.
 - Si un paso abre un formulario (p. ej. «Reserva rápida»), se puede abrir para capturarlo, pero se cierra con ✕/Cancelar **sin guardar**.
 - Con **Claude en Chrome** sobre la sesión ya abierta del usuario en staydesko.com, en una pestaña nueva.
 - **Privacidad:** antes de capturar, reemplazar en pantalla los nombres reales de huéspedes por ficticios con un `MutationObserver` en JS (solo cambia lo que se ve en esa pestaña, no los datos). Nunca publicar nombres reales, teléfonos, emails ni la lista negra.
