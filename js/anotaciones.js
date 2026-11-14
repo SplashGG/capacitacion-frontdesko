@@ -62,7 +62,8 @@
     globo.style.setProperty('--flecha', (r.left + r.width / 2 - izquierda) + 'px');
   }
 
-  function ocultar() { globo.hidden = true; }
+  var fijado = null; // marcador cuyo globo se queda abierto en el visor (pantallas táctiles, ver 4)
+  function ocultar() { if (!fijado) globo.hidden = true; }
 
   document.addEventListener('pointerover', function (e) {
     if (e.pointerType !== 'mouse') return;
@@ -90,4 +91,34 @@
   addEventListener('scroll', ocultar, true);
   addEventListener('wheel', ocultar, { passive: true });
   addEventListener('pointerdown', ocultar);
+
+  // 4. Pantallas táctiles, dentro del visor: mantener pulsado un marcador muestra su globo.
+  // Al soltar, el globo se queda hasta cerrar el visor o mantener pulsado otro marcador.
+  var espera = null, inicioToque = null;
+  function cancelarEspera() { clearTimeout(espera); espera = null; }
+  document.addEventListener('pointerdown', function (e) {
+    cancelarEspera();
+    if (e.pointerType === 'mouse' || !e.isPrimary) return; // un segundo dedo (pellizco) cancela
+    var m = e.target.closest('.visor .marca[data-texto]');
+    if (!m) return;
+    inicioToque = { x: e.clientX, y: e.clientY };
+    espera = setTimeout(function () {
+      if (fijado) fijado.classList.remove('fija');
+      fijado = m;
+      m.classList.add('fija');
+      mostrar(m);
+    }, 450);
+  });
+  document.addEventListener('pointermove', function (e) {
+    if (espera && Math.hypot(e.clientX - inicioToque.x, e.clientY - inicioToque.y) > 10) cancelarEspera();
+  });
+  document.addEventListener('pointerup', cancelarEspera);
+  document.addEventListener('pointercancel', cancelarEspera);
+  // El visor avisa al mover o acercar la imagen (el globo sigue a su marcador) y al cerrarse.
+  document.addEventListener('visor:cambio', function () { if (fijado) mostrar(fijado); });
+  document.addEventListener('visor:cerrado', function () {
+    if (fijado) fijado.classList.remove('fija');
+    fijado = null;
+    globo.hidden = true;
+  });
 })();

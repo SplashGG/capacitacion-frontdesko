@@ -219,7 +219,7 @@ h3 { font-size: 20px; margin: 0 0 8px; color: var(--carbon); }
 /* Marcador rectangular: enmarca toda la zona (botón, tarjeta, columna...). left/top = esquina superior izquierda */
 .marca.caja { aspect-ratio: auto; min-width: 0; transform: none; border-radius: 8px; }
 .marca[data-texto] { cursor: help; }
-.marca[data-texto]:hover { animation: none; border-color: var(--naranja-fuerte); box-shadow: 0 0 0 6px rgba(239, 154, 17, .4); }
+.marca[data-texto]:hover, .marca.fija { animation: none; border-color: var(--naranja-fuerte); box-shadow: 0 0 0 6px rgba(239, 154, 17, .4); }
 
 /* Globo de las anotaciones (js/anotaciones.js) */
 .globo {
@@ -278,7 +278,7 @@ h3 { font-size: 20px; margin: 0 0 8px; color: var(--carbon); }
 .visor-escena { flex: 1; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; touch-action: none; cursor: zoom-in; }
 .visor-escena.con-zoom { cursor: grab; }
 .visor-escena.con-zoom.arrastrando { cursor: grabbing; }
-.visor-lienzo { flex: none; transform-origin: center center; user-select: none; }
+.visor-lienzo { flex: none; transform-origin: center center; user-select: none; -webkit-user-select: none; -webkit-touch-callout: none; }
 .visor-lienzo img { border-radius: 6px; pointer-events: none; }
 .visor-ayuda { text-align: center; font-size: 13px; color: #a9a097; padding: 8px 16px 12px; }
 

@@ -23,7 +23,7 @@
     '<div class="visor-escena"><div class="visor-lienzo"></div></div>' +
     '<div class="visor-ayuda">' +
       (matchMedia('(pointer: coarse)').matches
-        ? 'Toca o pellizca para acercar · Arrastra para moverte'
+        ? 'Toca o pellizca para acercar · Arrastra para moverte · Mantén pulsado un marcador para ver qué es'
         : 'Clic o rueda del ratón para acercar · Arrastra para moverte · Esc para cerrar') +
     '</div>';
   document.body.appendChild(visor);
@@ -39,6 +39,7 @@
     lienzo.style.transform = 'translate(' + x + 'px,' + y + 'px) scale(' + s + ')';
     pct.textContent = Math.round(s * 100) + '%';
     escena.classList.toggle('con-zoom', s > 1);
+    document.dispatchEvent(new Event('visor:cambio')); // js/anotaciones.js recoloca el globo fijo
   }
 
   // Evita que la imagen se salga de la pantalla al moverla.
@@ -113,6 +114,7 @@
     visor.hidden = true;
     document.documentElement.classList.remove('visor-abierto');
     lienzo.innerHTML = '';
+    document.dispatchEvent(new Event('visor:cerrado'));
     if (focoAnterior) focoAnterior.focus();
   }
 
@@ -142,7 +144,7 @@
 
   // Arrastrar para mover, pellizcar para hacer zoom, clic para acercar/ajustar.
   var punteros = new Map();
-  var movido = false, inicio = null, distPrevia = 0, medioPrevio = null;
+  var movido = false, inicio = null, tInicio = 0, distPrevia = 0, medioPrevio = null;
 
   function pinza() {
     var p = Array.from(punteros.values());
@@ -155,7 +157,7 @@
   escena.addEventListener('pointerdown', function (e) {
     escena.setPointerCapture(e.pointerId);
     punteros.set(e.pointerId, { x: e.clientX, y: e.clientY });
-    if (punteros.size === 1) { movido = false; inicio = { x: e.clientX, y: e.clientY }; }
+    if (punteros.size === 1) { movido = false; inicio = { x: e.clientX, y: e.clientY }; tInicio = Date.now(); }
     if (punteros.size === 2) { var p = pinza(); distPrevia = p.dist; medioPrevio = p.medio; movido = true; }
     escena.classList.add('arrastrando');
   });
@@ -181,7 +183,8 @@
     if (!punteros.delete(e.pointerId)) return;
     if (punteros.size > 0) return;
     escena.classList.remove('arrastrando');
-    if (movido || e.type === 'pointercancel') return;
+    // Mantener pulsado no es un toque: no acerca ni cierra (sirve para ver un marcador).
+    if (movido || e.type === 'pointercancel' || Date.now() - tInicio > 450) return;
     var r = lienzo.getBoundingClientRect();
     var sobreImagen = e.clientX >= r.left && e.clientX <= r.right && e.clientY >= r.top && e.clientY <= r.bottom;
     if (sobreImagen) {
@@ -191,6 +194,8 @@
       cerrar();
     }
   }
+  // Sin menú del navegador al mantener pulsado.
+  escena.addEventListener('contextmenu', function (e) { e.preventDefault(); });
   escena.addEventListener('pointerup', soltar);
   escena.addEventListener('pointercancel', soltar);
 
