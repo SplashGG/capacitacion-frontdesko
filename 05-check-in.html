@@ -1,0 +1,301 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Hacer el check-in de un huésped · Capacitación</title>
+<link rel="icon" href="img/logo.svg">
+<link rel="stylesheet" href="css/estilos.css">
+<script src="js/anotaciones.js" defer></script>
+<script src="js/visor.js" defer></script>
+<script src="js/pasos.js" defer></script>
+</head>
+<body>
+
+<header class="marca-hotel">
+  <div class="contenedor">
+    <a class="identidad" href="index.html">
+      <img src="img/logo.svg" alt="Logotipo Hotel Posada del Desierto">
+      <span class="textos">
+        <span class="nombre-hotel">Hotel Posada del Desierto</span>
+        <span class="separador"></span>
+        <span class="seccion">Capacitación FrontDesko</span>
+      </span>
+    </a>
+    <nav><a href="index.html">Todos los temas</a></nav>
+  </div>
+</header>
+
+<div class="cabecera">
+  <div class="contenedor">
+    <div class="migas"><a href="index.html">Inicio</a> › Recepción: lo básico</div>
+    <span class="etiqueta">Tema 5 · Recepción: lo básico</span>
+    <h1>Hacer el check-in de un huésped</h1>
+    <p class="lead">El huésped está en el mostrador. Revisa su reserva, registra su identificación, cobra y entrégale la llave.</p>
+    <div class="fichas">
+      <span class="ficha">Nivel: básico</span>
+      <span class="ficha">Para: recepción</span>
+    </div>
+  </div>
+</div>
+
+<main class="contenedor">
+
+  <section>
+    <h2>Lo que vas a aprender</h2>
+    <ul class="aprenderas">
+      <li>Cómo encontrar la reserva del huésped que acaba de llegar.</li>
+      <li>Qué datos revisar con el huésped antes del check-in.</li>
+      <li>Cómo registrar su identificación en la ventana <b>Check-in y pago</b>.</li>
+      <li>Cómo cobrar la estancia y hacer el check-in con un solo botón.</li>
+      <li>Cómo saber que el check-in quedó hecho.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cómo empezar</h2>
+    <p>Haz clic en la pestaña <span class="pestana-ui">Reservas</span>. Se abre el <b>Tapechart (Calendario de reservas)</b>. Si aún no sabes leerlo, mira antes el tema <a href="03-entender-el-tapechart.html">Entender el Tapechart (Calendario de reservas)</a>.</p>
+    <p>El <b>check-in</b> es registrar en FrontDesko que el huésped ya llegó y se queda en el hotel. Hasta que no lo haces, el sistema lo sigue esperando.</p>
+    <div class="nota"><p>Abrir la reserva y la ventana <b>Check-in y pago</b> no cambia nada. Solo se guarda cuando pulsas <span class="boton-ui">Cobrar y hacer check-in</span>. Para salir sin guardar, usa <b>Cancelar</b> o <b>✕</b>.</p></div>
+  </section>
+
+  <section>
+    <h2>Paso a paso</h2>
+
+    <!-- 1. Encontrar la reserva -->
+    <article class="paso">
+      <div class="num">1</div>
+      <div class="cuerpo">
+        <h3 class="titulo-paso">Encuentra la reserva del huésped</h3>
+        <p>Pregunta al huésped su nombre. En el Tapechart (Calendario de reservas), busca su <b>barra rosa</b> y haz <b>clic en ella</b>.</p>
+        <figure class="captura">
+          <a href="img/check-in/01-tapechart.jpg" target="_blank"><div class="lienzo">
+            <img src="img/check-in/01-tapechart.jpg" alt="Tapechart (Calendario de reservas) con la barra rosa de la reserva de Laura Méndez Soto en la habitación SENC-106 y el contador Llegadas de hoy arriba" loading="lazy">
+            <span class="marca caja" style="left:4.2%;top:6.2%;width:4.7%;height:4.3%" data-n="1"></span>
+            <span class="marca caja" style="left:20.5%;top:13.6%;width:12%;height:3.3%" data-n="2"></span>
+            <span class="marca caja" style="left:14.3%;top:28.8%;width:12.2%;height:3.6%" data-n="3"></span>
+            <span class="marca caja" style="left:50.6%;top:0.9%;width:14.8%;height:4.4%" data-n="4"></span>
+          </div></a>
+          <figcaption>Tapechart (Calendario de reservas) antes del check-in. Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Pestaña Reservas</b>: abre el Tapechart (Calendario de reservas).</span></li>
+          <li><span class="n">2</span><span><b>Llegadas de hoy</b>: cuántos huéspedes llegan hoy y, al lado, cuántos ya tienen el check-in hecho (<b>con check-in</b>).</span></li>
+          <li><span class="n">3</span><span><b>La barra del huésped</b>: en <b>rosa</b>, la reserva está <span class="termino">confirmada</span> pero el huésped aún no ha hecho el check-in. Haz clic aquí.</span></li>
+          <li><span class="n">4</span><span><b>Buscar reservas...</b>: si no ves la barra, escribe aquí el nombre del huésped. Tiene su propio tema.</span></li>
+        </ul>
+        <p class="turno"><b>En tu turno:</b> mientras el huésped saca su identificación, ya puedes ir abriendo su reserva.</p>
+      </div>
+    </article>
+
+    <!-- 2. Revisar la reserva -->
+    <article class="paso">
+      <div class="num">2</div>
+      <div class="cuerpo">
+        <h3 class="titulo-paso">Revisa la reserva con el huésped</h3>
+        <p>Se abre la ventana de la reserva. Antes de hacer el check-in, confirma con el huésped que los datos son correctos.</p>
+        <figure class="captura">
+          <a href="img/check-in/02-reserva.jpg" target="_blank"><div class="lienzo">
+            <img src="img/check-in/02-reserva.jpg" alt="Ventana de la reserva de Laura Méndez Soto en estado CONFIRMED, con el botón Check-in arriba a la derecha" loading="lazy">
+            <span class="marca caja" style="left:4.6%;top:2.6%;width:17.3%;height:9%" data-n="1"></span>
+            <span class="marca caja" style="left:5.2%;top:25.3%;width:31.9%;height:13%" data-n="2"></span>
+            <span class="marca caja" style="left:38.6%;top:25.3%;width:31.9%;height:13%" data-n="3"></span>
+            <span class="marca caja" style="left:38.6%;top:54%;width:31.9%;height:7.4%" data-n="4"></span>
+            <span class="marca caja" style="left:72.6%;top:37.2%;width:10.8%;height:9%" data-n="5"></span>
+            <span class="marca caja" style="left:61.1%;top:4.1%;width:6.8%;height:5.5%" data-n="6"></span>
+          </div></a>
+          <figcaption>Reserva de prueba antes del check-in. Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Nombre, fechas y estado</b>: <b>CONFIRMED</b> (confirmada) quiere decir que el huésped aún no ha hecho el check-in. FrontDesko lo muestra en inglés.</span></li>
+          <li><span class="n">2</span><span><b>Información del huésped</b>: nombre, teléfono y correo. Corrígelos con el lápiz azul si algo está mal.</span></li>
+          <li><span class="n">3</span><span><b>Detalles de la reserva</b>: <b>Llegada</b>, <b>Salida</b>, <b>Noches</b> y <b>Huéspedes</b>. Confirma la fecha de salida con el huésped.</span></li>
+          <li><span class="n">4</span><span><b>Peticiones especiales</b>: lo que pidió el huésped al reservar. Léelo antes de darle la llave.</span></li>
+          <li><span class="n">5</span><span><b>Importe total</b> y, debajo, <span class="termino">Pago pendiente</span>: lo que falta por cobrar.</span></li>
+          <li><span class="n">6</span><span><span class="boton-ui">Check-in</span>: abre la ventana para hacer el check-in (paso 3).</span></li>
+        </ul>
+        <div class="nota ojo"><p><b>Cuidado:</b> el botón rojo <b>Cancelar</b> de esta ventana <b>cancela la reserva</b>. Para cerrar la ventana sin cambiar nada, usa <b>✕</b> (arriba a la derecha).</p></div>
+        <p class="turno"><b>En tu turno:</b> pregunta «¿Se va el día 13?» y «¿Viene usted solo?». Si algo cambia, corrígelo antes del check-in.</p>
+      </div>
+    </article>
+
+    <!-- 3. Ventana Check-in y pago -->
+    <article class="paso">
+      <div class="num">3</div>
+      <div class="cuerpo">
+        <h3 class="titulo-paso">Abre la ventana Check-in y pago</h3>
+        <p>Pulsa <span class="boton-ui">Check-in</span>. Se abre la ventana <b>Check-in y pago</b>, con dos partes: la identificación del huésped (azul) y el pago (verde).</p>
+        <figure class="captura">
+          <a href="img/check-in/03-ventana-check-in.jpg" target="_blank"><div class="lienzo">
+            <img src="img/check-in/03-ventana-check-in.jpg" alt="Ventana Check-in y pago vacía, con Verificación de identidad, Añadir pago y los botones Cancelar, Check-in exprés y Cobrar y hacer check-in" loading="lazy">
+            <span class="marca caja" style="left:30.7%;top:8.3%;width:10.7%;height:6.3%" data-n="1"></span>
+            <span class="marca caja" style="left:31.1%;top:16.8%;width:37.8%;height:22%" data-n="2"></span>
+            <span class="marca caja" style="left:31.1%;top:40.2%;width:37.8%;height:22%" data-n="3"></span>
+            <span class="marca caja" style="left:42.6%;top:65.1%;width:4.3%;height:4%" data-n="4"></span>
+            <span class="marca caja" style="left:67.9%;top:8.4%;width:1.4%;height:3%" data-n="4"></span>
+          </div></a>
+          <figcaption>Ventana Check-in y pago recién abierta.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Check-in y pago</b> y, debajo, el nombre del huésped. Comprueba que es la persona que tienes delante.</span></li>
+          <li><span class="n">2</span><span><b>Verificación de identidad</b>: el documento del huésped (paso 4).</span></li>
+          <li><span class="n">3</span><span><b>Añadir pago</b>: el cobro (paso 5).</span></li>
+          <li><span class="n">4</span><span><b>Cancelar</b> (abajo) y <b>✕</b> (arriba): cierran la ventana <b>sin guardar</b>.</span></li>
+        </ul>
+        <p class="turno"><b>En tu turno:</b> si abriste la ventana del huésped equivocado, pulsa <b>Cancelar</b>. No se guarda nada.</p>
+      </div>
+    </article>
+
+    <!-- 4. Identificación -->
+    <article class="paso">
+      <div class="num">4</div>
+      <div class="cuerpo">
+        <h3 class="titulo-paso">Registra la identificación del huésped</h3>
+        <p>Pide al huésped su identificación y copia los datos en la parte azul.</p>
+        <figure class="captura">
+          <a href="img/check-in/04-datos-rellenos.jpg" target="_blank"><div class="lienzo">
+            <img src="img/check-in/04-datos-rellenos.jpg" alt="Verificación de identidad rellena: Tarjeta de elector, número de documento y país de expedición México" loading="lazy">
+            <span class="marca caja" style="left:31.8%;top:22.3%;width:18%;height:6.9%" data-n="1"></span>
+            <span class="marca caja" style="left:50.1%;top:22.3%;width:18.1%;height:6.9%" data-n="2"></span>
+            <span class="marca caja" style="left:31.8%;top:30.6%;width:18%;height:6.9%" data-n="3"></span>
+          </div></a>
+          <figcaption>Identificación registrada. Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Tipo de documento</b>: <b>Pasaporte</b>, <b>Permiso de conducir</b>, <b>Documento nacional de identidad</b>, <b>Tarjeta de elector</b> u <b>Otro</b>. Para una credencial del INE, elige <b>Tarjeta de elector</b>.</span></li>
+          <li><span class="n">2</span><span><b>Número de documento</b>: cópialo tal como aparece en la identificación.</span></li>
+          <li><span class="n">3</span><span><b>País de expedición</b>: el país que emitió el documento (por ejemplo, México).</span></li>
+        </ul>
+        <p>La lista también trae <b>Tarjeta Aadhar</b> y <b>Tarjeta PAN</b>. Son documentos de la India: no los vas a usar.</p>
+        <p class="turno"><b>En tu turno:</b> revisa que la foto de la identificación es la del huésped y que el nombre coincide con el de la reserva.</p>
+      </div>
+    </article>
+
+    <!-- 5. Pago -->
+    <article class="paso">
+      <div class="num">5</div>
+      <div class="cuerpo">
+        <h3 class="titulo-paso">Cobra y haz el check-in</h3>
+        <p>En la parte verde, elige cómo paga el huésped. Después pulsa <span class="boton-ui">Cobrar y hacer check-in</span>: registra el pago y el check-in a la vez.</p>
+        <figure class="captura">
+          <a href="img/check-in/04-datos-rellenos.jpg" target="_blank"><div class="lienzo">
+            <img src="img/check-in/04-datos-rellenos.jpg" alt="Añadir pago con Método de pago Efectivo, Importe 2190.00 y el botón verde Cobrar y hacer check-in activo" loading="lazy">
+            <span class="marca caja" style="left:31.8%;top:45.7%;width:18%;height:6.9%" data-n="1"></span>
+            <span class="marca caja" style="left:50.1%;top:45.7%;width:18.1%;height:6.9%" data-n="2"></span>
+            <span class="marca caja" style="left:31.8%;top:54%;width:18%;height:6.9%" data-n="3"></span>
+            <span class="marca caja" style="left:50.1%;top:54%;width:18.1%;height:6.9%" data-n="4"></span>
+            <span class="marca caja" style="left:56.8%;top:64.3%;width:12.1%;height:5.3%" data-n="5"></span>
+            <span class="marca caja" style="left:47.4%;top:64.3%;width:9.2%;height:5.3%" data-n="6"></span>
+          </div></a>
+          <figcaption>Pago en efectivo del total de la estancia. Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Método de pago *</b> (obligatorio): <b>Efectivo</b>, <b>Pago con tarjeta</b>, <b>Transferencia bancaria</b>, <b>VCC (tarjeta virtual)</b>, <b>UPI</b> u <b>Otro</b>.</span></li>
+          <li><span class="n">2</span><span><b>Importe *</b>: viene con el total de la estancia (aquí, <b>2190.00</b>). Cámbialo solo si el huésped paga otra cantidad.</span></li>
+          <li><span class="n">3</span><span><span class="termino">UTI</span> (opcional): el número de la operación, por ejemplo el del comprobante de la terminal.</span></li>
+          <li><span class="n">4</span><span><b>Notas</b> (opcional): cualquier aclaración sobre el pago.</span></li>
+          <li><span class="n">5</span><span><span class="boton-ui">Cobrar y hacer check-in</span>: guarda el pago y hace el check-in. Sale en gris hasta que eliges el método de pago.</span></li>
+          <li><span class="n">6</span><span><b>Check-in exprés</b>: el otro botón de check-in. En este manual usamos <b>Cobrar y hacer check-in</b>. Pregunta a tu supervisor antes de usar este.</span></li>
+        </ul>
+        <div class="nota ojo"><p><b>Cuidado:</b> cobra primero (efectivo en la caja o tarjeta aprobada en la terminal) y después pulsa el botón. FrontDesko registra el pago, pero no cobra por ti.</p></div>
+        <p class="turno"><b>En tu turno:</b> di el importe en voz alta antes de cobrar: «Son 2,190 pesos por las dos noches».</p>
+      </div>
+    </article>
+
+    <!-- 6. Comprobar -->
+    <article class="paso">
+      <div class="num">6</div>
+      <div class="cuerpo">
+        <h3 class="titulo-paso">Comprueba que el check-in quedó hecho</h3>
+        <p>Abajo salen dos avisos verdes: <b>Identidad guardada</b> y <b>Pago añadido</b>. Unos segundos después, el estado de la reserva cambia.</p>
+        <figure class="captura">
+          <a href="img/check-in/05-alojada.jpg" target="_blank"><div class="lienzo">
+            <img src="img/check-in/05-alojada.jpg" alt="Reserva en estado CHECKED_IN, con identidad VERIFICADO, Pagado por completo, hora de llegada 19:43 y los botones Salida anticipada y Deshacer check-in" loading="lazy">
+            <span class="marca caja" style="left:16%;top:7.6%;width:5.6%;height:3.6%" data-n="1"></span>
+            <span class="marca caja" style="left:54.6%;top:41.4%;width:5.8%;height:4.2%" data-n="1"></span>
+            <span class="marca caja" style="left:38.6%;top:54%;width:6%;height:5%" data-n="2"></span>
+            <span class="marca caja" style="left:21.3%;top:46.3%;width:10.6%;height:5.2%" data-n="3"></span>
+            <span class="marca caja" style="left:5.2%;top:54.5%;width:14.9%;height:5.6%" data-n="3"></span>
+            <span class="marca caja" style="left:72.6%;top:43.5%;width:10.8%;height:4.7%" data-n="4"></span>
+            <span class="marca caja" style="left:66.1%;top:4.1%;width:20.2%;height:5.5%" data-n="5"></span>
+          </div></a>
+          <figcaption>La misma reserva, ya con el check-in hecho. Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>CHECKED_IN</b>: el huésped ya está <span class="termino">alojado</span>. Antes decía CONFIRMED.</span></li>
+          <li><span class="n">2</span><span><b>Hora de llegada</b>: la hora a la que hiciste el check-in.</span></li>
+          <li><span class="n">3</span><span><b>Verificación de identidad</b>: ahora dice <b>VERIFICADO</b>. Debajo, en <b>Datos de identidad</b>, el documento que registraste.</span></li>
+          <li><span class="n">4</span><span><b>Pagado por completo</b>: ya no queda nada pendiente.</span></li>
+          <li><span class="n">5</span><span>Arriba ya no está <b>Check-in</b>. Salen <b>Salida anticipada</b> y <b>Deshacer check-in</b>: no los pulses ahora.</span></li>
+        </ul>
+        <p>Más abajo, en <b>Información de la habitación</b>, el <b>Estado</b> de la habitación pasa de <b>LIBRE</b> a <b>OCUPADA</b>.</p>
+        <div class="nota ojo"><p><b>Cuidado:</b> justo después de pulsar el botón, el estado puede seguir en <b>CONFIRMED</b> unos segundos. Espera a que cambie antes de cerrar o repetir nada. No pulses el check-in dos veces.</p></div>
+        <p>Cierra la ventana con <b>✕</b>. En el Tapechart (Calendario de reservas), la barra del huésped pasa de <b>rosa</b> a <b>azul</b>, y el número de la habitación deja de estar en verde.</p>
+        <figure class="captura">
+          <a href="img/check-in/06-barra-alojada.jpg" target="_blank"><div class="lienzo">
+            <img src="img/check-in/06-barra-alojada.jpg" alt="Barra azul de la reserva de Laura Méndez Soto en la habitación SENC-106, también en azul" loading="lazy">
+            <span class="marca caja" style="left:23.9%;top:70%;width:20.3%;height:26%" data-n="1"></span>
+            <span class="marca caja" style="left:1.3%;top:70%;width:13.2%;height:26%" data-n="2"></span>
+          </div></a>
+          <figcaption>La reserva con el check-in hecho, en el Tapechart (Calendario de reservas). Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Barra azul</b>: el huésped ya tiene el check-in hecho.</span></li>
+          <li><span class="n">2</span><span><b>La habitación</b> <code>SENC-106</code> sale en azul: está ocupada.</span></li>
+        </ul>
+        <p class="turno"><b>En tu turno:</b> cuando veas la barra en azul, entrega la llave y dile al huésped la hora de salida.</p>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2>El camino de un check-in</h2>
+    <ol class="flujo">
+      <li><b>Reserva</b>Clic en la barra rosa del huésped</li>
+      <li><b>Revisar</b>Nombre, fechas y peticiones</li>
+      <li><b>Identificación</b>Tipo, número y país</li>
+      <li><b>Cobro</b>Método de pago e importe</li>
+      <li><b>Alojado</b>CHECKED_IN y barra azul: entrega la llave</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Glosario</h2>
+    <dl class="glosario">
+      <dt>Check-in</dt><dd>Registrar en FrontDesko que el huésped llegó y se queda en el hotel.</dd>
+      <dt>Tapechart (Calendario de reservas)</dt><dd>Cuadro con todas las habitaciones del hotel en filas y las noches en columnas. Cada reserva es una barra.</dd>
+      <dt>Confirmada</dt><dd>Reserva hecha cuyo huésped aún no ha hecho el check-in. FrontDesko la marca como <b>CONFIRMED</b> y su barra sale en rosa.</dd>
+      <dt>Alojado</dt><dd>Huésped que ya hizo el check-in y está en el hotel. FrontDesko lo marca como <b>CHECKED_IN</b> y su barra sale en azul.</dd>
+      <dt>Pago pendiente</dt><dd>La reserva tiene dinero sin cobrar. Cuando se cobra todo, pasa a <b>Pagado por completo</b>.</dd>
+      <dt>Verificación de identidad</dt><dd>Registrar en la reserva el documento del huésped: tipo, número y país. Cuando está hecha, sale <b>VERIFICADO</b>.</dd>
+      <dt>UTI</dt><dd>Identificador único de transacción: el número de la operación de pago, por ejemplo el del comprobante de la terminal. Es opcional.</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Repaso rápido</h2>
+    <p>Intenta responder antes de abrir cada respuesta.</p>
+    <details><summary>Llega un huésped con reserva. ¿Dónde haces clic para empezar?</summary>En su <b>barra rosa</b> del <b>Tapechart (Calendario de reservas)</b>. Se abre su reserva y ahí pulsas <b>Check-in</b>.</details>
+    <details><summary>¿Qué revisas con el huésped antes de pulsar Check-in?</summary>Nombre y contacto, fechas de llegada y salida, número de huéspedes y las <b>Peticiones especiales</b>.</details>
+    <details><summary>En la ventana Check-in y pago, el botón verde sale gris. ¿Qué falta?</summary>Elegir el <b>Método de pago</b>. Es obligatorio.</details>
+    <details><summary>¿Cómo sabes que el check-in quedó hecho?</summary>El estado pasa a <b>CHECKED_IN</b>, la habitación a <b>OCUPADA</b> y la barra del Tapechart (Calendario de reservas) se vuelve <b>azul</b>.</details>
+    <details><summary>Quieres cerrar la ventana de la reserva. ¿Qué botón no debes usar?</summary>El rojo <b>Cancelar</b>: cancela la reserva. Cierra con <b>✕</b>.</details>
+  </section>
+
+  <section class="tarjeta siguiente no-imprimir">
+    <div>
+      <div style="font-size:13px;color:var(--texto-suave);text-transform:uppercase;letter-spacing:.8px;font-weight:700">Siguiente tema</div>
+      <div style="font-size:20px;font-weight:700;color:var(--carbon)">Hacer el check-out de un huésped</div>
+      <div style="color:var(--texto-suave)">Liquida el folio y libera la habitación.</div>
+    </div>
+    <span class="pronto">Próximamente</span>
+  </section>
+
+</main>
+
+<footer>
+  <div class="contenedor"><img src="img/logo.svg" alt="">Hotel Posada del Desierto · Manual interno de FrontDesko · Los nombres de huéspedes en las capturas son ficticios.</div>
+</footer>
+
+</body>
+</html>

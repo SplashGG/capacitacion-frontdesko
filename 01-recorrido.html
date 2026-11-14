@@ -8,6 +8,7 @@
 <link rel="stylesheet" href="css/estilos.css">
 <script src="js/anotaciones.js" defer></script>
 <script src="js/visor.js" defer></script>
+<script src="js/pasos.js" defer></script>
 </head>
 <body>
 
@@ -32,7 +33,6 @@
     <h1>Recorrido: qué hace FrontDesko</h1>
     <p class="lead">Las partes principales del sistema en una sola página. Es lo primero que debes ver antes de atender a tu primer huésped con FrontDesko.</p>
     <div class="fichas">
-      <span class="ficha">⏱ 10 minutos de lectura</span>
       <span class="ficha">Nivel: básico</span>
       <span class="ficha">Para: recepción</span>
     </div>
@@ -64,20 +64,14 @@
         <figure class="captura">
           <a href="img/recorrido/01-panel.jpg" target="_blank"><div class="lienzo">
             <img src="img/recorrido/01-panel.jpg" alt="Pantalla Panel de FrontDesko con tarjetas de ocupación, ingresos, llegadas, salidas y limpieza" loading="lazy">
-            <span class="marca" style="left:2.2%;top:7.6%" data-n="1"></span>
-            <span class="marca" style="left:6.1%;top:23.3%" data-n="2"></span>
-            <span class="marca" style="left:55.2%;top:23.3%" data-n="3"></span>
-            <span class="marca" style="left:79.8%;top:23.3%" data-n="4"></span>
-            <span class="marca" style="left:9.2%;top:38%" data-n="5"></span>
+            <span class="marca caja" style="left:0.4%;top:5.4%;width:3.7%;height:4.7%" data-n="1"></span>
+            <span class="marca caja" style="left:0.5%;top:16.2%;width:98.2%;height:58%" data-n="2"></span>
           </div></a>
           <figcaption>Pantalla Panel.</figcaption>
         </figure>
         <ul class="leyenda">
           <li><span class="n">1</span><span><b>Pestaña Panel</b>: haz clic aquí para volver a esta pantalla desde cualquier parte de FrontDesko.</span></li>
-          <li><span class="n">2</span><span><b>Ocupación actual</b>: porcentaje de habitaciones ocupadas hoy.</span></li>
-          <li><span class="n">3</span><span><b>Llegadas de hoy</b>: huéspedes que llegan hoy y cuántos check-ins faltan.</span></li>
-          <li><span class="n">4</span><span><b>Salidas de hoy</b>: huéspedes que se van hoy y cuántos check-outs faltan.</span></li>
-          <li><span class="n">5</span><span><b>Estado de limpieza</b>: cuántas habitaciones están limpias y cuántas sucias.</span></li>
+          <li><span class="n">2</span><span><b>Tarjetas del día</b>: ocupación, ingresos, llegadas, salidas, limpieza, mantenimiento y huéspedes especiales, de un vistazo. Las verás en detalle en el siguiente tema, <a href="02-leer-el-panel.html">Leer el Panel</a>.</span></li>
         </ul>
         <p class="turno"><b>En tu turno:</b> al empezar, mira estas tarjetas. En 10 segundos sabes cuánta gente llega, cuánta se va y si hay habitaciones por limpiar.</p>
       </div>
@@ -92,10 +86,10 @@
         <figure class="captura">
           <a href="img/recorrido/02-tapechart.jpg" target="_blank"><div class="lienzo">
             <img src="img/recorrido/02-tapechart.jpg" alt="Tapechart (Calendario de reservas) con habitaciones en filas, noches en columnas y una reserva como barra roja" loading="lazy">
-            <span class="marca" style="left:6.6%;top:7.6%" data-n="1"></span>
-            <span class="marca" style="left:2.7%;top:26.2%" data-n="2"></span>
-            <span class="marca" style="left:51.3%;top:19.7%" data-n="3"></span>
-            <span class="marca" style="left:35.3%;top:26%" data-n="4"></span>
+            <span class="marca caja" style="left:4.3%;top:5.4%;width:4.7%;height:4.7%" data-n="1"></span>
+            <span class="marca caja" style="left:0.8%;top:24.4%;width:8%;height:66.6%" data-n="2"></span>
+            <span class="marca caja" style="left:26.4%;top:17.6%;width:6%;height:73.3%" data-n="3"></span>
+            <span class="marca caja" style="left:32.1%;top:24.4%;width:6.3%;height:3.5%" data-n="4"></span>
           </div></a>
           <figcaption>Pestaña Reservas: Tapechart (Calendario de reservas).</figcaption>
         </figure>
@@ -103,7 +97,7 @@
           <li><span class="n">1</span><span>Pestaña <b>Reservas</b>.</span></li>
           <li><span class="n">2</span><span><b>Cada fila es una habitación.</b> <code>SENC-105</code> es la sencilla 105. Si el número sale en <b>verde</b>, está limpia; en <b>naranja</b>, está por limpiar.</span></li>
           <li><span class="n">3</span><span><b>Cada columna es una noche.</b> Las columnas amarillas son sábado y domingo.</span></li>
-          <li><span class="n">4</span><span><b>Cada reserva es una barra</b> con el nombre del huésped, de la noche de llegada a la última noche.</span></li>
+          <li><span class="n">4</span><span><b>Cada reserva es una barra</b> con el nombre del huésped. Se expande a lo largo, desde la llegada a la salida.</span></li>
         </ul>
         <p>Así ves de un golpe las <b>noches libres</b> (huecos vacíos) y las <b>sobreventas</b> (dos reservas en la misma habitación y noche).</p>
         <p class="turno"><b>En tu turno:</b> esta será tu pantalla principal. Reservas, check-in y check-out se hacen desde aquí.</p>
@@ -115,21 +109,21 @@
       <div class="num">3</div>
       <div class="cuerpo">
         <h3 class="titulo-paso">Una reserva nueva en dos clics</h3>
-        <p>En el Tapechart (Calendario de reservas), haz clic en una <b>noche libre</b> (o arrastra sobre varias noches). Se abre la ventana <b>Reserva rápida</b> con la habitación y las fechas ya puestas.</p>
+        <p>En el Tapechart (Calendario de reservas), haz clic en una <b>noche libre</b>. Se abre la ventana <b>Reserva rápida</b> con la habitación y las fechas ya puestas.</p>
         <figure class="captura">
           <a href="img/recorrido/03-reserva-rapida.jpg" target="_blank"><div class="lienzo">
             <img src="img/recorrido/03-reserva-rapida.jpg" alt="Ventana Reserva rápida abierta sobre el Tapechart (Calendario de reservas) para la habitación SENC-115" loading="lazy">
-            <span class="marca" style="left:44.6%;top:14.9%" data-n="1"></span>
-            <span class="marca" style="left:44%;top:41.7%" data-n="2"></span>
-            <span class="marca" style="left:58.7%;top:60.2%" data-n="3"></span>
-            <span class="marca" style="left:59.7%;top:10.3%" data-n="4"></span>
+            <span class="marca caja" style="left:40%;top:12.9%;width:9.4%;height:3.9%" data-n="1"></span>
+            <span class="marca caja" style="left:36.3%;top:37.2%;width:15.1%;height:6.9%" data-n="2"></span>
+            <span class="marca caja" style="left:37%;top:56.9%;width:25.2%;height:6.6%" data-n="3"></span>
+            <span class="marca caja" style="left:56.7%;top:8%;width:6%;height:4.7%" data-n="4"></span>
           </div></a>
           <figcaption>Ventana Reserva rápida después de hacer clic en una noche libre de la habitación 115.</figcaption>
         </figure>
         <ul class="leyenda">
           <li><span class="n">1</span><span>La <b>habitación</b> en la que hiciste clic.</span></li>
           <li><span class="n">2</span><span>Las fechas de <b>Check-in</b> y <b>Check-out</b>, ya rellenas. Debajo, el plan de tarifa.</span></li>
-          <li><span class="n">3</span><span>El <b>Total</b> de la estancia, calculado solo.</span></li>
+          <li><span class="n">3</span><span>El <b>Total</b> de la estancia, calculado automáticamente.</span></li>
           <li><span class="n">4</span><span><span class="boton-ui">✓ Crear</span> guarda la reserva. Arriba del todo escribes el <b>nombre del huésped</b>, su correo y teléfono.</span></li>
         </ul>
         <div class="nota ojo"><p><b>Cuidado:</b> el botón <b>Crear</b> guarda una reserva real. Si solo estás practicando, cierra la ventana con <b>✕</b> o <b>Cancelar</b>.</p></div>
@@ -146,15 +140,15 @@
         <figure class="captura">
           <a href="img/recorrido/04-tarifas.jpg" target="_blank"><div class="lienzo">
             <img src="img/recorrido/04-tarifas.jpg" alt="Calendario de tarifas con tipos de habitación en filas y precios por noche" loading="lazy">
-            <span class="marca" style="left:11.8%;top:19.4%" data-n="1"></span>
-            <span class="marca" style="left:18%;top:44.2%" data-n="2"></span>
-            <span class="marca" style="left:29.8%;top:31.9%" data-n="3"></span>
-            <span class="marca" style="left:95.3%;top:19.4%" data-n="4"></span>
+            <span class="marca caja" style="left:1.1%;top:17.4%;width:16.6%;height:4.3%" data-n="1"></span>
+            <span class="marca caja" style="left:15.1%;top:42%;width:5.8%;height:4.4%" data-n="2"></span>
+            <span class="marca caja" style="left:26.9%;top:29.8%;width:11.8%;height:58.5%" data-n="3"></span>
+            <span class="marca caja" style="left:92.1%;top:17.4%;width:6.6%;height:4.3%" data-n="4"></span>
           </div></a>
           <figcaption>Pestaña Tarifas, vista Calendario.</figcaption>
         </figure>
         <ul class="leyenda">
-          <li><span class="n">1</span><span><b>Plan de tarifa</b> que estás viendo (por ejemplo, <i>Best Available Rate</i>).</span></li>
+          <li><span class="n">1</span><span><b>Plan de tarifa</b>: son grupos de precios. Aquí eliges qué plan ver. <b><i>Best Available Rate</i></b> («mejor tarifa disponible») es el plan principal: el precio normal, sin descuentos ni condiciones especiales. Es el que sale por defecto.</span></li>
           <li><span class="n">2</span><span>Precio de una noche para ese tipo de habitación (Sencilla Confort, Doble Confort, Jr Suite…).</span></li>
           <li><span class="n">3</span><span>Las noches de <b>fin de semana</b> se marcan en azul.</span></li>
           <li><span class="n">4</span><span><b>Edición masiva</b> cambia muchos precios a la vez.</span></li>
@@ -172,9 +166,9 @@
         <figure class="captura">
           <a href="img/recorrido/05-limpieza.jpg" target="_blank"><div class="lienzo">
             <img src="img/recorrido/05-limpieza.jpg" alt="Panel de limpieza con habitaciones por limpiar en naranja y limpias en verde" loading="lazy">
-            <span class="marca" style="left:6.1%;top:18.9%" data-n="1"></span>
-            <span class="marca" style="left:8.7%;top:32.5%" data-n="2"></span>
-            <span class="marca" style="left:35.1%;top:31.5%" data-n="3"></span>
+            <span class="marca caja" style="left:0.8%;top:17.1%;width:35.5%;height:4.1%" data-n="1"></span>
+            <span class="marca caja" style="left:0.6%;top:21.9%;width:16.2%;height:14.9%" data-n="2"></span>
+            <span class="marca caja" style="left:33.3%;top:21.9%;width:16.3%;height:14.9%" data-n="3"></span>
           </div></a>
           <figcaption>Pestaña Limpieza, vista Habitaciones.</figcaption>
         </figure>
@@ -196,9 +190,9 @@
         <figure class="captura">
           <a href="img/recorrido/06-informes.jpg" target="_blank"><div class="lienzo">
             <img src="img/recorrido/06-informes.jpg" alt="Pantalla Informes con resumen de ocupación e ingresos y gráficas" loading="lazy">
-            <span class="marca" style="left:4.5%;top:14.7%" data-n="1"></span>
-            <span class="marca" style="left:67.9%;top:14.7%" data-n="2"></span>
-            <span class="marca" style="left:95.1%;top:20.5%" data-n="3"></span>
+            <span class="marca caja" style="left:1.1%;top:12.7%;width:6.9%;height:4.1%" data-n="1"></span>
+            <span class="marca caja" style="left:57.2%;top:12.3%;width:38.6%;height:5%" data-n="2"></span>
+            <span class="marca caja" style="left:91.6%;top:18%;width:7.1%;height:4.8%" data-n="3"></span>
           </div></a>
           <figcaption>Pestaña Informes, vista Resumen.</figcaption>
         </figure>
@@ -219,8 +213,8 @@
         <figure class="captura">
           <a href="img/recorrido/07-buscar.jpg" target="_blank"><div class="lienzo">
             <img src="img/recorrido/07-buscar.jpg" alt="Ventana Resultados de búsqueda con dos reservas de la habitación 105" loading="lazy">
-            <span class="marca" style="left:57.4%;top:2.9%" data-n="1"></span>
-            <span class="marca" style="left:23.4%;top:20.5%" data-n="2"></span>
+            <span class="marca caja" style="left:49.7%;top:0.6%;width:15.2%;height:4.7%" data-n="1"></span>
+            <span class="marca caja" style="left:21.3%;top:18.3%;width:4.3%;height:9.9%" data-n="2"></span>
           </div></a>
           <figcaption>Búsqueda de «105» (número de habitación).</figcaption>
         </figure>
@@ -234,60 +228,13 @@
   </section>
 
   <section>
-    <h2>Mapa rápido del menú</h2>
-    <p>Las pestañas de arriba y para qué sirve cada una. Las marcadas en naranja son las que más vas a usar en recepción.</p>
-    <div class="mapa">
-      <div class="item clave"><span class="pestana-ui">Panel</span><p>Resumen del día: ocupación, ingresos, llegadas, salidas y limpieza.</p></div>
-      <div class="item clave"><span class="pestana-ui">Reservas</span><p>El Tapechart (Calendario de reservas). Crear reservas, check-in, check-out. Aquí pasas casi todo el turno.</p></div>
-      <div class="item"><span class="pestana-ui">Habitaciones</span><p>Las habitaciones del hotel y su estado.</p></div>
-      <div class="item"><span class="pestana-ui">Tarifas</span><p>Precios por noche que llegan a la web y a las OTA.</p></div>
-      <div class="item"><span class="pestana-ui">Informes</span><p>Ocupación, ingresos, pagos, impuestos, auditoría nocturna. Exporta a Excel o PDF.</p></div>
-      <div class="item"><span class="pestana-ui">Resumen diario</span><p>Revisión y cierre del día.</p></div>
-      <div class="item"><span class="pestana-ui">Cuentas por cobrar</span><p>Facturación a empresas y saldos pendientes.</p></div>
-      <div class="item clave"><span class="pestana-ui">Limpieza</span><p>Qué habitaciones están limpias y cuáles por limpiar.</p></div>
-      <div class="item clave"><span class="pestana-ui">Solicitudes</span><p>Pedidos de los huéspedes desde su app: toallas, servicio a la habitación, despertador…</p></div>
-      <div class="item"><span class="pestana-ui">Messages</span><p>Bandeja de mensajes con los huéspedes.</p></div>
-      <div class="item"><span class="pestana-ui">Huéspedes</span><p>Perfiles de huéspedes, historial y listas (VIP, lista negra…).</p></div>
-      <div class="item clave"><span class="pestana-ui">🔍 Buscar reservas…</span><p>Barra de búsqueda: nombre, nº de reserva, teléfono o email.</p></div>
-    </div>
-  </section>
-
-  <section id="ciclo">
-    <h2>Ciclo de una habitación</h2>
-    <p>Cómo pasa una habitación de un huésped al siguiente, y quién mueve cada paso:</p>
-    <ol class="flujo">
-      <li><b>Limpia y libre</b>Lista para vender<br><span class="quien limpieza">Limpieza</span></li>
-      <li><b>Reservada</b>Barra en el Tapechart (Calendario de reservas)<br><span class="quien recepcion">Recepción</span></li>
-      <li><b>Check-in</b>El huésped entra<br><span class="quien recepcion">Recepción</span></li>
-      <li><b>Check-out</b>El huésped se va<br><span class="quien recepcion">Recepción</span></li>
-      <li><b>Por limpiar</b>Cambia sola<br><span class="quien sistema">FrontDesko</span></li>
-      <li><b>Marcada limpia</b>Con un toque<br><span class="quien limpieza">Limpieza</span></li>
-    </ol>
-    <p style="font-size:15px;color:var(--texto-suave)">Y vuelve a empezar: la habitación queda lista para el siguiente huésped.</p>
-  </section>
-
-  <section>
-    <h2>Palabras que vas a oír</h2>
-    <div class="tarjeta">
-      <dl class="glosario">
-        <dt>Tapechart (Calendario de reservas)</dt><dd>El calendario de habitaciones de la pestaña Reservas. Filas = habitaciones, columnas = noches.</dd>
-        <dt>Walk-in</dt><dd>Cliente que llega sin reserva previa.</dd>
-        <dt>Sobreventa</dt><dd>Dos reservas en la misma habitación y la misma noche. Hay que resolverla moviendo una de las dos.</dd>
-        <dt>OTA / canales</dt><dd>Agencias de viaje en línea donde se vende el hotel (por ejemplo, Booking o Expedia).</dd>
-        <dt>Plan de tarifa</dt><dd>Un conjunto de precios con sus condiciones. El principal es <i>Best Available Rate</i> (mejor tarifa disponible).</dd>
-        <dt>Folio</dt><dd>La cuenta del huésped: cargos y pagos de su estancia. Se liquida en el check-out.</dd>
-      </dl>
-    </div>
-  </section>
-
-  <section>
     <h2>Repaso rápido</h2>
     <p>Intenta responder antes de abrir cada respuesta.</p>
     <details><summary>¿En qué pestaña se hace casi todo el trabajo de recepción?</summary>En <b>Reservas</b>, donde está el Tapechart (Calendario de reservas).</details>
     <details><summary>En el Tapechart (Calendario de reservas), ¿qué es una fila y qué es una columna?</summary>Cada <b>fila</b> es una habitación y cada <b>columna</b> es una noche.</details>
     <details><summary>En el Tapechart (Calendario de reservas), el número de una habitación sale en naranja. ¿Qué significa?</summary>Que está <b>por limpiar</b>. En verde significa limpia.</details>
-    <details><summary>Llega un cliente sin reserva. ¿Cuál es la forma más rápida de registrarlo?</summary>En el Tapechart (Calendario de reservas), haz clic en una noche libre (o arrastra sobre varias). Se abre <b>Reserva rápida</b> con la habitación y las fechas ya puestas.</details>
-    <details><summary>Un huésped te da solo su teléfono. ¿Cómo encuentras su reserva?</summary>Escríbelo en la barra <b>Buscar reservas…</b> de arriba y pulsa Enter. Funciona desde cualquier pantalla.</details>
+    <details><summary>Llega un cliente sin reserva. ¿Cuál es la forma más rápida de registrarlo?</summary>En el Tapechart (Calendario de reservas), haz clic en una noche libre. Se abre <b>Reserva rápida</b> con la habitación y las fechas ya puestas.</details>
+    <details><summary>Un huésped te da solo su teléfono. ¿Cómo encuentras su reserva?</summary>Escríbelo en la barra <b>Buscar reservas…</b> de arriba y pulsa Enter. Funciona desde cualquier pantalla. También puedes buscar por su nombre o su correo.</details>
   </section>
 
   <section class="tarjeta siguiente no-imprimir">
@@ -296,7 +243,7 @@
       <div style="font-size:20px;font-weight:700;color:var(--carbon)">Leer el Panel</div>
       <div style="color:var(--texto-suave)">Tu foto de la mañana: ocupación, llegadas, salidas y alertas.</div>
     </div>
-    <span class="pronto">Próximamente</span>
+    <a class="boton" href="02-leer-el-panel.html">Abrir tutorial →</a>
   </section>
 
 </main>

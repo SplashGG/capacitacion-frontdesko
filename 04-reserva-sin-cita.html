@@ -1,0 +1,320 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Crear una reserva sin cita previa · Capacitación</title>
+<link rel="icon" href="img/logo.svg">
+<link rel="stylesheet" href="css/estilos.css">
+<script src="js/anotaciones.js" defer></script>
+<script src="js/visor.js" defer></script>
+<script src="js/pasos.js" defer></script>
+</head>
+<body>
+
+<header class="marca-hotel">
+  <div class="contenedor">
+    <a class="identidad" href="index.html">
+      <img src="img/logo.svg" alt="Logotipo Hotel Posada del Desierto">
+      <span class="textos">
+        <span class="nombre-hotel">Hotel Posada del Desierto</span>
+        <span class="separador"></span>
+        <span class="seccion">Capacitación FrontDesko</span>
+      </span>
+    </a>
+    <nav><a href="index.html">Todos los temas</a></nav>
+  </div>
+</header>
+
+<div class="cabecera">
+  <div class="contenedor">
+    <div class="migas"><a href="index.html">Inicio</a> › Recepción: lo básico</div>
+    <span class="etiqueta">Tema 4 · Recepción: lo básico</span>
+    <h1>Crear una reserva sin cita previa</h1>
+    <p class="lead">Llega un cliente al mostrador sin reserva. Regístralo directamente en el Tapechart (Calendario de reservas) en menos de un minuto.</p>
+    <div class="fichas">
+      <span class="ficha">Nivel: básico</span>
+      <span class="ficha">Para: recepción</span>
+    </div>
+  </div>
+</div>
+
+<main class="contenedor">
+
+  <section>
+    <h2>Lo que vas a aprender</h2>
+    <ul class="aprenderas">
+      <li>Cómo abrir la ventana <b>Reserva rápida</b> desde una noche libre.</li>
+      <li>Qué datos del huésped son obligatorios y cuáles no.</li>
+      <li>Cómo cambiar las noches, las personas y el plan de tarifa.</li>
+      <li>Dónde poner un descuento, una nota o la identificación del huésped.</li>
+      <li>Cómo guardar la reserva, o cerrar sin guardar.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cómo empezar</h2>
+    <p>Haz clic en la pestaña <span class="pestana-ui">Reservas</span>. Se abre el <b>Tapechart (Calendario de reservas)</b>, el cuadro con las habitaciones en filas y las noches en columnas. Si aún no sabes leerlo, mira antes el tema <a href="03-entender-el-tapechart.html">Entender el Tapechart (Calendario de reservas)</a>.</p>
+    <div class="nota"><p>Abrir la ventana <b>Reserva rápida</b> y cerrarla con <b>✕</b> o <b>Cancelar</b> no guarda nada. La reserva solo se guarda cuando pulsas <span class="boton-ui">✓ Crear</span>.</p></div>
+  </section>
+
+  <section>
+    <h2>Paso a paso</h2>
+
+    <!-- 1. Celda libre -->
+    <article class="paso">
+      <div class="num">1</div>
+      <div class="cuerpo">
+        <h3 class="titulo-paso">Elige la habitación y la noche</h3>
+        <p>Busca la columna de <b>hoy</b> y, en ella, una celda vacía en la fila de la habitación que vas a dar. Haz <b>clic en esa celda</b>.</p>
+        <figure class="captura">
+          <a href="img/reserva-sin-cita/01-elegir-celda.jpg" target="_blank"><div class="lienzo">
+            <img src="img/reserva-sin-cita/01-elegir-celda.jpg" alt="Tapechart (Calendario de reservas) con la columna de hoy, jueves 12 de noviembre, y la habitación SENC-106 libre" loading="lazy">
+            <span class="marca caja" style="left:4%;top:5.4%;width:5.2%;height:5.7%" data-n="1"></span>
+            <span class="marca caja" style="left:18.7%;top:18.8%;width:5.9%;height:4.4%" data-n="2"></span>
+            <span class="marca caja" style="left:0.6%;top:29.4%;width:8.2%;height:2.9%" data-n="3"></span>
+            <span class="marca caja" style="left:20.5%;top:29.3%;width:5.9%;height:3%" data-n="4"></span>
+          </div></a>
+          <figcaption>Tapechart (Calendario de reservas): habitación SENC-106, noche de hoy.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Pestaña Reservas</b>: abre el Tapechart (Calendario de reservas).</span></li>
+          <li><span class="n">2</span><span><b>Hoy</b>: su fecha sale en <b>azul</b>. Un cliente sin reserva casi siempre llega para esta noche.</span></li>
+          <li><span class="n">3</span><span><b>La habitación</b>: <code>SENC-106</code> sale en <b>verde</b>, así que está limpia y lista para darla.</span></li>
+          <li><span class="n">4</span><span><b>La celda</b> donde se cruzan la habitación y la noche de hoy. Está vacía: se puede vender. Haz clic aquí.</span></li>
+        </ul>
+        <div class="nota ojo"><p><b>Cuidado:</b> si el número de la habitación sale en <b>naranja</b>, está por limpiar. Elige otra en verde o pregunta a ama de llaves antes de darla.</p></div>
+        <p class="turno"><b>En tu turno:</b> mientras el cliente te dice cuántas noches quiere, ya puedes ir buscando una habitación verde del tipo que pide.</p>
+      </div>
+    </article>
+
+    <!-- 2. Ventana Reserva rápida -->
+    <article class="paso">
+      <div class="num">2</div>
+      <div class="cuerpo">
+        <h3 class="titulo-paso">Se abre la ventana Reserva rápida</h3>
+        <p>Al hacer clic en la celda se abre la ventana <b>Reserva rápida</b>. La habitación y las fechas ya vienen puestas. Arriba ves el resumen y los botones para guardar o salir.</p>
+        <figure class="captura">
+          <a href="img/reserva-sin-cita/02-reserva-rapida.jpg" target="_blank"><div class="lienzo">
+            <img src="img/reserva-sin-cita/02-reserva-rapida.jpg" alt="Ventana Reserva rápida vacía para la habitación SENC-106, una noche, con los botones Crear y cerrar arriba y Cancelar abajo" loading="lazy">
+            <span class="marca caja" style="left:35.8%;top:8.8%;width:10.6%;height:3.3%" data-n="1"></span>
+            <span class="marca caja" style="left:36.1%;top:12.9%;width:4%;height:3.9%" data-n="2"></span>
+            <span class="marca caja" style="left:40.2%;top:13.4%;width:9.1%;height:3%" data-n="3"></span>
+            <span class="marca caja" style="left:56.7%;top:8.3%;width:6.1%;height:4.1%" data-n="4"></span>
+            <span class="marca caja" style="left:62.8%;top:8.3%;width:1.5%;height:3.3%" data-n="5"></span>
+            <span class="marca caja" style="left:36.7%;top:88.8%;width:4.7%;height:3.2%" data-n="5"></span>
+          </div></a>
+          <figcaption>Ventana Reserva rápida recién abierta.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Reserva rápida</b> y el número de noches. Sale en inglés: <b>1 NIGHT</b> es «1 noche»; <b>2 NIGHTS</b>, «2 noches».</span></li>
+          <li><span class="n">2</span><span><b>Número de habitaciones</b> (de 1 a 24). Déjalo en <b>1</b>. Si lo subes, el total se multiplica por ese número de habitaciones.</span></li>
+          <li><span class="n">3</span><span><b>La habitación</b> que elegiste en el Tapechart (Calendario de reservas).</span></li>
+          <li><span class="n">4</span><span><span class="boton-ui">✓ Crear</span>: guarda la reserva. Lo usas al final (paso 7).</span></li>
+          <li><span class="n">5</span><span><b>✕</b> (arriba) y <b>Cancelar</b> (abajo): cierran la ventana <b>sin guardar</b>.</span></li>
+        </ul>
+        <p>Los campos con asterisco (<b>*</b>) son obligatorios: <b>Nombre del huésped</b>, <b>Check-in</b> y <b>Check-out</b>. Las fechas ya vienen rellenas, así que solo te falta el nombre.</p>
+        <p class="turno"><b>En tu turno:</b> si te equivocaste de habitación, cierra con <b>✕</b> y haz clic en la celda correcta. No se guarda nada.</p>
+      </div>
+    </article>
+
+    <!-- 3. Huésped y origen -->
+    <article class="paso">
+      <div class="num">3</div>
+      <div class="cuerpo">
+        <h3 class="titulo-paso">Escribe quién se aloja</h3>
+        <p>En la primera fila escribe los datos del huésped. Justo debajo, indica que llegó <b>sin reserva previa</b>.</p>
+        <figure class="captura">
+          <a href="img/reserva-sin-cita/03-datos-huesped.jpg" target="_blank"><div class="lienzo">
+            <img src="img/reserva-sin-cita/03-datos-huesped.jpg" alt="Reserva rápida con nombre, correo y teléfono del huésped rellenos y Origen de la reserva en Sin reserva previa" loading="lazy">
+            <span class="marca caja" style="left:36.6%;top:20%;width:9.2%;height:3.9%" data-n="1"></span>
+            <span class="marca caja" style="left:45.9%;top:20%;width:17%;height:3.9%" data-n="2"></span>
+            <span class="marca caja" style="left:36.5%;top:31.4%;width:26.3%;height:9.6%" data-n="3"></span>
+            <span class="marca caja" style="left:36.5%;top:25.8%;width:26.3%;height:4.1%" data-n="4"></span>
+          </div></a>
+          <figcaption>Datos del huésped y origen de la reserva. Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Nombre del huésped *</b>: obligatorio. Escríbelo como aparece en su identificación.</span></li>
+          <li><span class="n">2</span><span><b>Correo electrónico</b> y <b>Número de teléfono</b>: no son obligatorios, pero sin ellos no podrás enviarle confirmaciones.</span></li>
+          <li><span class="n">3</span><span><b>Origen de la reserva</b>: por defecto, <b>Reserva directa</b>. Ábrelo y elige <b>Sin reserva previa</b> para especificar que es una reserva rápida (opcional).</span></li>
+          <li><span class="n">4</span><span><b>Facturar a (facturación directa)</b>: solo si la estancia la paga una empresa o agencia de viajes. Para un cliente que paga él mismo, déjalo cerrado.</span></li>
+        </ul>
+        <p>Cada sección con <b>+</b> a la derecha se abre al hacer clic en su título, y se cierra con el mismo clic (sale <b>−</b>).</p>
+        <p class="turno"><b>En tu turno:</b> pide el teléfono o el correo mientras le pides la identificación. Así no se te olvida.</p>
+      </div>
+    </article>
+
+    <!-- 4. Fechas, personas y tarifa -->
+    <article class="paso">
+      <div class="num">4</div>
+      <div class="cuerpo">
+        <h3 class="titulo-paso">Revisa fechas, personas y tarifa</h3>
+        <p>Las fechas, las personas y el plan de tarifa ya vienen rellenos. Cámbialos si el cliente se queda más noches o viene acompañado. El precio se actualiza al momento.</p>
+        <figure class="captura">
+          <a href="img/reserva-sin-cita/03-datos-huesped.jpg" target="_blank"><div class="lienzo">
+            <img src="img/reserva-sin-cita/03-datos-huesped.jpg" alt="Fechas de check-in 12/11/2026 y check-out 14/11/2026, 1 adulto, 0 niños, plan Best Available Rate y total de 2 noches" loading="lazy">
+            <span class="marca caja" style="left:36.5%;top:42.7%;width:7.5%;height:6.5%" data-n="1"></span>
+            <span class="marca caja" style="left:44.1%;top:42.7%;width:7.6%;height:6.5%" data-n="2"></span>
+            <span class="marca caja" style="left:51.7%;top:42.7%;width:11.1%;height:6.5%" data-n="3"></span>
+            <span class="marca caja" style="left:36.4%;top:51.8%;width:26.3%;height:4%" data-n="4"></span>
+            <span class="marca caja" style="left:37%;top:62.2%;width:25.2%;height:6.6%" data-n="5"></span>
+            <span class="marca caja" style="left:42.8%;top:9.1%;width:4%;height:2.8%" data-n="5"></span>
+          </div></a>
+          <figcaption>Estancia de 2 noches, del 12 al 14 de noviembre.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Check-in *</b>: el día de llegada. Viene con la noche en la que hiciste clic.</span></li>
+          <li><span class="n">2</span><span><b>Check-out *</b>: el día en que se va. Viene con el día siguiente (1 noche). Aquí se cambió al 14 para 2 noches.</span></li>
+          <li><span class="n">3</span><span><b>Adultos</b> (1 a 4) y <b>Niños</b> (0 a 4).</span></li>
+          <li><span class="n">4</span><span><span class="termino">Plan de tarifa</span>: viene en <b>Best Available Rate</b> (mejor tarifa disponible). La otra opción es <b>Mobile Device Rate</b> (tarifa para móvil). Cámbialo solo si te lo indica tu supervisor.</span></li>
+          <li><span class="n">5</span><span><b>Total</b>: se recalcula solo. Arriba, la etiqueta pasa a <b>2 NIGHTS</b> (2 noches).</span></li>
+        </ul>
+        <p class="turno"><b>En tu turno:</b> antes de seguir, confirma con el cliente el día de salida y cuántas personas son. Es lo que más cambia el precio.</p>
+      </div>
+    </article>
+
+    <!-- 5. Precio -->
+    <article class="paso">
+      <div class="num">5</div>
+      <div class="cuerpo">
+        <h3 class="titulo-paso">El precio: total, descuento y recargo</h3>
+        <p>El recuadro del precio te dice cuánto cuesta la estancia. Si hace falta un descuento o un cargo extra, abre <b>Descuento y recargo</b>.</p>
+        <figure class="captura">
+          <a href="img/reserva-sin-cita/04-precio.jpg" target="_blank"><div class="lienzo">
+            <img src="img/reserva-sin-cita/04-precio.jpg" alt="Sección Descuento y recargo abierta, con Descuento en importe o porcentaje, Recargo con motivo, y Total de 2 noches 2190 con IVA e ISH incluidos" loading="lazy">
+            <span class="marca caja" style="left:37.2%;top:52.5%;width:24.8%;height:4%" data-n="1"></span>
+            <span class="marca caja" style="left:37.6%;top:58.1%;width:24%;height:6.6%" data-n="2"></span>
+            <span class="marca caja" style="left:37.6%;top:66.5%;width:24%;height:6.6%" data-n="3"></span>
+            <span class="marca caja" style="left:37%;top:75.2%;width:25.2%;height:6.3%" data-n="4"></span>
+            <span class="marca caja" style="left:37.2%;top:81.8%;width:24.7%;height:5%" data-n="5"></span>
+          </div></a>
+          <figcaption>Sección Descuento y recargo abierta.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Descuento y recargo</b>: haz clic en el título para abrirlo.</span></li>
+          <li><span class="n">2</span><span><b>Descuento</b>: elige <b>Imp.</b> (una cantidad en pesos) o <b>%</b> (un porcentaje) y escribe el número a la derecha.</span></li>
+          <li><span class="n">3</span><span><span class="termino">Recargo</span>: escribe el <b>Motivo</b> (por ejemplo, salida tardía) y el importe.</span></li>
+          <li><span class="n">4</span><span><b>Total</b>: lo que cuesta toda la estancia (aquí, 2 noches × $1,095 = <b>$2,190</b>).</span></li>
+          <li><span class="n">5</span><span><b>Incluye <span class="termino">IVA</span> + <span class="termino">ISH</span> (11%)</b>: los impuestos ya están dentro del total. <b>Predeterminado</b> es el precio por noche del plan de tarifa.</span></li>
+        </ul>
+        <div class="nota ojo"><p><b>Cuidado:</b> no pongas descuentos ni cambies el total sin la autorización de tu supervisor.</p></div>
+        <p class="turno"><b>En tu turno:</b> dile al cliente el <b>Total</b> antes de crear la reserva, para que no haya sorpresas al pagar.</p>
+      </div>
+    </article>
+
+    <!-- 6. Notas, cargos y documentos -->
+    <article class="paso">
+      <div class="num">6</div>
+      <div class="cuerpo">
+        <h3 class="titulo-paso">Notas, cargos e identificación</h3>
+        <p>Abajo del todo hay tres secciones más. No son obligatorias. Baja con la rueda del ratón dentro de la ventana para verlas.</p>
+        <figure class="captura">
+          <a href="img/reserva-sin-cita/05-extras.jpg" target="_blank"><div class="lienzo">
+            <img src="img/reserva-sin-cita/05-extras.jpg" alt="Secciones Notas o peticiones adicionales, Cargos con Añadir cargo y Documentos del huésped con Adjuntar ID y Añadir archivo" loading="lazy">
+            <span class="marca caja" style="left:36.5%;top:49.6%;width:26.3%;height:9.4%" data-n="1"></span>
+            <span class="marca caja" style="left:36.5%;top:60.6%;width:26.3%;height:10.5%" data-n="2"></span>
+            <span class="marca caja" style="left:36.5%;top:72.9%;width:26.3%;height:12.3%" data-n="3"></span>
+          </div></a>
+          <figcaption>Parte de abajo de la ventana, con las tres secciones abiertas.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Notas o peticiones adicionales</b> (Opcional): lo que pida el huésped (una almohada extra, piso bajo, llegar tarde...).</span></li>
+          <li><span class="n">2</span><span><b>Cargos</b> (Opcional): con <span class="boton-ui borde">+ Añadir cargo</span> sumas un cargo extra a la reserva. Tiene su propio tema.</span></li>
+          <li><span class="n">3</span><span><b>Documentos del huésped</b> (Opcional): en <b>Adjuntar ID</b>, pulsa <span class="boton-ui borde">+ Añadir archivo</span> para subir la foto de su identificación. Se guarda en el perfil del huésped cuando creas la reserva.</span></li>
+        </ul>
+        <p class="turno"><b>En tu turno:</b> si escaneas la identificación del huésped, súbela aquí. Así no tienes que buscarla después.</p>
+      </div>
+    </article>
+
+    <!-- 7. Crear -->
+    <article class="paso">
+      <div class="num">7</div>
+      <div class="cuerpo">
+        <h3 class="titulo-paso">Crea la reserva</h3>
+        <p>Repasa nombre, fechas y total. Si todo está bien, pulsa <span class="boton-ui">✓ Crear</span>, arriba a la derecha de la ventana.</p>
+        <figure class="captura">
+          <a href="img/reserva-sin-cita/03-datos-huesped.jpg" target="_blank"><div class="lienzo">
+            <img src="img/reserva-sin-cita/03-datos-huesped.jpg" alt="Botón Crear arriba a la derecha de la ventana Reserva rápida, con los datos del huésped y las fechas rellenos" loading="lazy">
+            <span class="marca caja" style="left:56.7%;top:8.3%;width:6.1%;height:4.1%" data-n="1"></span>
+            <span class="marca caja" style="left:36.6%;top:20%;width:26.3%;height:3.9%" data-n="2"></span>
+            <span class="marca caja" style="left:36.5%;top:42.7%;width:26.3%;height:6.5%" data-n="2"></span>
+            <span class="marca caja" style="left:37%;top:62.2%;width:25.2%;height:6.6%" data-n="2"></span>
+          </div></a>
+          <figcaption>Todo listo para crear la reserva. Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><span class="boton-ui">✓ Crear</span>: guarda la reserva.</span></li>
+          <li><span class="n">2</span><span><b>Último repaso</b>: nombre del huésped, fechas y total.</span></li>
+        </ul>
+        <p>Al pulsar <b>Crear</b> se abre la ventana de la reserva, con el aviso verde <b>Reserva creada correctamente</b> y su <span class="termino">número de confirmación</span>. Comprueba ahí que <b>Llegada</b> y <b>Salida</b> son las fechas que acordaste con el cliente. Ciérrala con <b>✕</b> (arriba a la derecha).</p>
+        <div class="nota ojo"><p><b>Cuidado:</b> en la ventana de la reserva, el botón rojo <b>Cancelar</b> cancela la reserva que acabas de crear. Para cerrar, usa <b>✕</b>.</p></div>
+        <p>En el Tapechart (Calendario de reservas) verás la reserva como una <b>barra nueva</b>, con la etiqueta <b>NUEVA</b>, en la fila de la habitación que elegiste. Haz clic en la barra cuando quieras abrirla para cobrar o hacer el <span class="termino">check-in</span>.</p>
+        <figure class="captura">
+          <a href="img/reserva-sin-cita/06-barra-nueva.jpg" target="_blank"><div class="lienzo">
+            <img src="img/reserva-sin-cita/06-barra-nueva.jpg" alt="Barra nueva de la reserva de Laura Méndez Soto en la fila de la habitación SENC-106, con la etiqueta NUEVA" loading="lazy">
+            <span class="marca caja" style="left:24%;top:74.5%;width:20.2%;height:24.5%" data-n="1"></span>
+          </div></a>
+          <figcaption>La reserva recién creada en el Tapechart (Calendario de reservas). Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Barra nueva</b>: lleva la etiqueta <b>NUEVA</b> y el nombre del huésped, en la fila de <code>SENC-106</code>.</span></li>
+        </ul>
+        <p class="turno"><b>En tu turno:</b> si el cliente se queda ya, el siguiente paso es el check-in. Lo ves en el próximo tema.</p>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2>El camino de una reserva sin cita previa</h2>
+    <ol class="flujo">
+      <li><b>Celda libre</b>Clic en la habitación y la noche de hoy</li>
+      <li><b>Huésped</b>Nombre, contacto y «Sin reserva previa»</li>
+      <li><b>Estancia</b>Fechas, personas y tarifa</li>
+      <li><b>Precio</b>Dile el total al cliente</li>
+      <li><b>Crear</b>La reserva sale en el Tapechart</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Glosario</h2>
+    <dl class="glosario">
+      <dt>Tapechart (Calendario de reservas)</dt><dd>Cuadro con todas las habitaciones del hotel en filas y las noches en columnas. Cada reserva es una barra.</dd>
+      <dt>Sin reserva previa</dt><dd>Cliente que llega al mostrador sin haber reservado antes (en inglés, <i>walk-in</i>). Es uno de los orígenes de reserva de FrontDesko.</dd>
+      <dt>Origen</dt><dd>Por dónde llegó la reserva: directa con el hotel, sin reserva previa, teléfono, una web de reservas, etc.</dd>
+      <dt>Plan de tarifa</dt><dd>El conjunto de precios que se aplica a la reserva. Decide el precio por noche.</dd>
+      <dt>Recargo</dt><dd>Cargo extra que se suma al precio de la estancia, por ejemplo por salida tardía o por una mejora de habitación.</dd>
+      <dt>IVA</dt><dd>Impuesto al Valor Agregado.</dd>
+      <dt>ISH</dt><dd>Impuesto Sobre Hospedaje.</dd>
+      <dt>Check-in</dt><dd>Registrar la llegada del huésped al hotel.</dd>
+      <dt>Número de confirmación</dt><dd>Código único de cada reserva (por ejemplo <code>HO0004</code>). Sirve para encontrarla rápido.</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Repaso rápido</h2>
+    <p>Intenta responder antes de abrir cada respuesta.</p>
+    <details><summary>Llega un cliente sin reserva. ¿Dónde haces clic para empezar?</summary>En el <b>Tapechart (Calendario de reservas)</b>, en una celda vacía de la columna de hoy, en la fila de una habitación en verde.</details>
+    <details><summary>¿Qué dato tienes que escribir sí o sí en la ventana Reserva rápida?</summary>El <b>Nombre del huésped</b>. Las fechas (Check-in y Check-out) también son obligatorias, pero ya vienen puestas.</details>
+    <details><summary>¿Qué eliges en «Origen de la reserva» para un cliente que llega sin reservar?</summary><b>Sin reserva previa</b>.</details>
+    <details><summary>El cliente se queda 3 noches, pero la ventana dice 1 NIGHT. ¿Qué cambias?</summary>La fecha de <b>Check-out</b>: pon el día en que se va. El total se recalcula solo.</details>
+    <details><summary>Abriste Reserva rápida en la habitación equivocada. ¿Cómo sales sin guardar?</summary>Con <b>✕</b> arriba o <b>Cancelar</b> abajo. Solo <b>Crear</b> guarda la reserva.</details>
+  </section>
+
+  <section class="tarjeta siguiente no-imprimir">
+    <div>
+      <div style="font-size:13px;color:var(--texto-suave);text-transform:uppercase;letter-spacing:.8px;font-weight:700">Siguiente tema</div>
+      <div style="font-size:20px;font-weight:700;color:var(--carbon)">Hacer el check-in de un huésped</div>
+      <div style="color:var(--texto-suave)">De la llegada a alojado, con documento de identidad y pago.</div>
+    </div>
+    <a class="boton" href="05-check-in.html">Abrir tutorial →</a>
+  </section>
+
+</main>
+
+<footer>
+  <div class="contenedor"><img src="img/logo.svg" alt="">Hotel Posada del Desierto · Manual interno de FrontDesko · Los nombres de huéspedes en las capturas son ficticios.</div>
+</footer>
+
+</body>
+</html>

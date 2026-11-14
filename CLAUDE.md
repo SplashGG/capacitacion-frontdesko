@@ -14,13 +14,26 @@ Cada página es un tutorial corto con **capturas reales** de FrontDesko, pasos n
 - Botones y pestañas en **negrita** y con el texto exacto de la pantalla (`**Siguiente**`, `**Reservas**`).
 - Escribe siempre **«Tapechart (Calendario de reservas)»**, nunca «Tapechart» solo: es el nombre que usa FrontDesko, pero el equipo no lo conoce.
 - Explica la palabra técnica la primera vez (Tapechart, folio, OTA, sobreventa...). Si se repite, va al glosario.
+- **Palabras con definición en globo (`.termino`):** si una palabra técnica aparece en el texto sin explicarse ahí mismo (en una leyenda, un consejo, el repaso...) y está en el glosario de la página, márcala con `<span class="termino">ADR</span>`. Al pasar el ratón (o llegar con Tab) sale un globo con su definición del glosario; al hacer clic (o tocarla, o Enter), la página baja a esa palabra en el glosario. No escribas «mira el glosario».
+  - La definición se escribe **una sola vez**, en el `<dt>`/`<dd>` de `dl.glosario` de esa página. El texto del `.termino` debe coincidir con el `<dt>` (sin distinguir mayúsculas); si no coincide (plural, otra forma), usa `data-termino`: `<span class="termino" data-termino="OTA">OTA's</span>`.
+  - Úsalo en la primera aparición de cada término dentro de un paso, no en todas. No hace falta donde la frase ya lo explica.
+  - Puede ir dentro de `<b>` (`<b class="termino">ADR</b>`). Lo gestiona `js/anotaciones.js`; si el término no está en el glosario, se queda como texto normal.
 - Cada paso responde: **qué ves**, **qué haces** y **para qué te sirve en el turno**.
 - Avisa de lo que puede confundir (p. ej. pasos que el recorrido salta solo).
 - No inventes funciones. Si algo no se vio en la pantalla real, no se afirma.
 
 ## Estructura de cada tutorial
-1. Cabecera: título, duración, nivel, una frase de "para qué sirve".
-2. "Lo que vas a aprender" (3–5 viñetas).
+1. Cabecera: título, nivel, una frase de "para qué sirve". **No pongas fichas de duración** (p. ej. «⏱ 10 minutos de lectura») en ninguna página.
+2. "Lo que vas a aprender": 3–5 tarjetas, siempre con este marcado (el estilo ya está en `.aprenderas`: tarjeta con el icono de birrete en un círculo, dos columnas en escritorio y una en móvil). Sin números (no son pasos). Cada tarjeta, una frase corta (idealmente una línea) que dice qué sabrás hacer o encontrar:
+   ```html
+   <section>
+     <h2>Lo que vas a aprender</h2>
+     <ul class="aprenderas">
+       <li>Dónde ver cómo va el día: ocupación, llegadas y salidas.</li>
+       <li>Qué es el <b>Tapechart (Calendario de reservas)</b> y cómo se lee.</li>
+     </ul>
+   </section>
+   ```
 3. Cómo empezar (dónde se abre en FrontDesko).
 4. Pasos: número + título + captura real con marcadores numerados + leyenda (`.leyenda`, un punto por marcador) + "En tu turno" (consejo).
 5. Diagrama si ayuda (flujo, ciclo, mapa).
@@ -29,24 +42,32 @@ Cada página es un tutorial corto con **capturas reales** de FrontDesko, pasos n
 ## Marca e identidad visual
 - Empresa: **Hotel Posada del Desierto**. Logotipo: círculo naranja con un cactus recortado en blanco → `img/logo.svg`.
 - **Color principal: naranja del logotipo `#EF9A11`** (`--naranja`). Variantes: `--naranja-fuerte` para fondos con texto blanco, `--naranja-texto` para enlaces/texto. Colores de apoyo: carbón, arena, salvia, turquesa, terracota (todos definidos en `:root` de `css/estilos.css`). No añadir colores fuera de esa paleta.
+- **Avisos** (`.nota.ojo`, «Cuidado: …»): amarillo `--amarillo` / `--amarillo-claro`, nunca el naranja de marca, para que no se confundan. El amarillo solo se usa en avisos.
 - Los elementos que imitan botones o pestañas de FrontDesko (`.boton-ui`, `.pestana-ui`) se quedan en azul/gris, como en el sistema real, para que se reconozcan.
 - **Todas las páginas llevan la misma cabecera de marca** (copiar tal cual de `index.html`):
   `logo | HOTEL POSADA DEL DESIERTO | Capacitación FrontDesko` + enlace «Todos los temas», y el mismo pie con el logo.
+  La cabecera es fija y se hace pequeña al desplazarse (solo CSS, en `css/estilos.css`).
 
 ## Técnica
 - HTML + CSS puros, sin build, sin frameworks y **sin CDN**: debe abrirse con doble clic y funcionar sin internet en cualquier PC de recepción.
 - Estilos compartidos en `css/estilos.css`. Reutiliza sus clases (`.paso`, `.captura`, `.marca`, `.nota`, `.flujo`, etc.) en lugar de crear estilos nuevos por página.
 - Páginas en la raíz con prefijo de orden: `01-recorrido.html`, `02-leer-el-panel.html`... `index.html` es la portada y lista los temas.
 - Imágenes en `img/<tema>/NN-descripcion.jpg`.
-- Marcadores sobre capturas: `<span class="marca" style="left:X%;top:Y%" data-n="1"></span>` dentro de `.captura`, con X/Y en porcentaje del tamaño de la imagen (coordenada px ÷ ancho/alto de la captura).
+- Marcadores sobre capturas, dentro de `.captura`, con valores en porcentaje del tamaño de la imagen (px ÷ ancho/alto de la captura). Mismo estilo (borde naranja, latido y número), dos formas:
+  - **Caja (lo normal):** enmarca toda la zona que se explica (botón, campo, tarjeta, columna...). `left`/`top` = esquina superior izquierda, con unos px de margen alrededor de la zona:
+    `<span class="marca caja" style="left:X%;top:Y%;width:W%;height:H%" data-n="1"></span>`
+  - **Círculo:** solo para un punto pequeño o cuando una caja taparía demasiado. `left`/`top` = centro:
+    `<span class="marca" style="left:X%;top:Y%" data-n="1"></span>`
 - Debe imprimirse bien (hay estilos `@media print`).
 - Cada página de tutorial incluye en el `<head>`, en este orden:
   ```html
   <script src="js/anotaciones.js" defer></script>
   <script src="js/visor.js" defer></script>
+  <script src="js/pasos.js" defer></script>
   ```
+  - `pasos.js`: lectura guiada. En pantallas anchas (≥1280px) añade un índice vertical de pasos a la izquierda del contenido, que acompaña al leer (con títulos desde 1600px); en pantallas más estrechas, una barra «Paso N de M» con un botón por paso bajo la cabecera. Y al final de cada `.paso` un botón «Siguiente Sección ↓» (el último lleva a la sección siguiente, p. ej. «Repaso rápido»). Al dejar de desplazarte cerca de un paso, la página se ajusta suavemente a su inicio (`scroll-snap` en `css/estilos.css`). Funciona solo con los `.paso` de la página: no hay que escribir nada a mano.
   - `visor.js`: al hacer clic en una `.captura` se abre un visor a pantalla completa con zoom (rueda, pellizco, clic, botones +/−) que conserva los marcadores.
-  - `anotaciones.js`: al pasar el ratón por un marcador sale un globo con su explicación, también dentro del visor.
+  - `anotaciones.js`: al pasar el ratón por un marcador sale un globo con su explicación, también dentro del visor. También muestra la definición de las palabras `.termino` (ver «Reglas de redacción»).
 - **Anotaciones (marcador + leyenda):** el texto se escribe una sola vez, en la `.leyenda` del mismo `.paso` (o `section`). El marcador `data-n="2"` muestra el punto de la leyenda cuyo `<span class="n">2</span>` coincide. Por eso cada marcador debe tener su punto en la leyenda con el mismo número, con esta forma:
   ```html
   <span class="marca" style="left:55.2%;top:23.3%" data-n="2"></span>
@@ -73,10 +94,10 @@ Marcar con [x] al publicar la página.
 - [x] Recorrido: qué hace FrontDesko → `01-recorrido.html`
 
 **Recepción: lo básico**
-- [ ] Leer el Panel
-- [ ] Entender el Tapechart
-- [ ] Crear una reserva sin cita previa
-- [ ] Hacer el check-in de un huésped
+- [x] Leer el Panel → `02-leer-el-panel.html`
+- [x] Entender el Tapechart → `03-entender-el-tapechart.html`
+- [x] Crear una reserva sin cita previa → `04-reserva-sin-cita.html`
+- [x] Hacer el check-in de un huésped → `05-check-in.html`
 - [ ] Hacer el check-out de un huésped
 - [ ] Encontrar cualquier reserva rápido
 - [ ] Trabajar con la lista de reservas
