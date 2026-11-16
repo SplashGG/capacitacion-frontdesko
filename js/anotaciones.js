@@ -1,13 +1,13 @@
 // Anotaciones de las capturas.
 // Al pasar el ratón por un marcador (.marca data-n="N") se muestra un globo con el texto
-// del punto N de la .leyenda que va justo debajo de la captura (o, si no, la primera del paso). El texto se escribe una sola vez, en la leyenda.
+// del punto N de la .leyenda que va justo debajo de la captura (o, si no, la primera de la sección). El texto se escribe una sola vez, en la leyenda.
 // Funciona en la página y dentro del visor (js/visor.js), porque el texto viaja en data-texto.
 // Lo mismo para las palabras técnicas marcadas con .termino: el globo muestra su definición del glosario.
 (function () {
   // 1. Copiar a cada marcador el texto de su punto de la leyenda.
   document.querySelectorAll('.captura').forEach(function (figura) {
-    var bloque = figura.closest('.paso, section');
-    // Si la captura lleva su propia leyenda justo debajo, se usa esa (pasos con dos capturas).
+    var bloque = figura.closest('.seccion, section');
+    // Si la captura lleva su propia leyenda justo debajo, se usa esa (secciones con dos capturas).
     var siguiente = figura.nextElementSibling;
     var leyenda = siguiente && siguiente.matches('.leyenda') ? siguiente : bloque && bloque.querySelector('.leyenda');
     if (!leyenda) return;

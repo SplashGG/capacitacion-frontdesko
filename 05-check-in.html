@@ -8,7 +8,7 @@
 <link rel="stylesheet" href="css/estilos.css">
 <script src="js/anotaciones.js" defer></script>
 <script src="js/visor.js" defer></script>
-<script src="js/pasos.js" defer></script>
+<script src="js/secciones.js" defer></script>
 </head>
 <body>
 
@@ -19,7 +19,7 @@
       <span class="textos">
         <span class="nombre-hotel">Hotel Posada del Desierto</span>
         <span class="separador"></span>
-        <span class="seccion">Capacitación FrontDesko</span>
+        <span class="sitio">Capacitación FrontDesko</span>
       </span>
     </a>
     <nav><a href="index.html">Todos los temas</a></nav>
@@ -56,17 +56,16 @@
     <h2>Cómo empezar</h2>
     <p>Haz clic en la pestaña <span class="pestana-ui">Reservas</span>. Se abre el <b>Tapechart (Calendario de reservas)</b>. Si aún no sabes leerlo, mira antes el tema <a href="03-entender-el-tapechart.html">Entender el Tapechart (Calendario de reservas)</a>.</p>
     <p>El <b>check-in</b> es registrar en FrontDesko que el huésped ya llegó y se queda en el hotel. Hasta que no lo haces, el sistema lo sigue esperando.</p>
-    <div class="nota"><p>Abrir la reserva y la ventana <b>Check-in y pago</b> no cambia nada. Solo se guarda cuando pulsas <span class="boton-ui">Cobrar y hacer check-in</span>. Para salir sin guardar, usa <b>Cancelar</b> o <b>✕</b>.</p></div>
   </section>
 
   <section>
     <h2>Paso a paso</h2>
 
     <!-- 1. Encontrar la reserva -->
-    <article class="paso">
+    <article class="seccion">
       <div class="num">1</div>
       <div class="cuerpo">
-        <h3 class="titulo-paso">Encuentra la reserva del huésped</h3>
+        <h3 class="titulo-seccion">Encuentra la reserva del huésped</h3>
         <p>Pregunta al huésped su nombre. En el Tapechart (Calendario de reservas), busca su <b>barra rosa</b> y haz <b>clic en ella</b>.</p>
         <figure class="captura">
           <a href="img/check-in/01-tapechart.jpg" target="_blank"><div class="lienzo">
@@ -89,10 +88,10 @@
     </article>
 
     <!-- 2. Revisar la reserva -->
-    <article class="paso">
+    <article class="seccion">
       <div class="num">2</div>
       <div class="cuerpo">
-        <h3 class="titulo-paso">Revisa la reserva con el huésped</h3>
+        <h3 class="titulo-seccion">Revisa la reserva con el huésped</h3>
         <p>Se abre la ventana de la reserva. Antes de hacer el check-in, confirma con el huésped que los datos son correctos.</p>
         <figure class="captura">
           <a href="img/check-in/02-reserva.jpg" target="_blank"><div class="lienzo">
@@ -112,7 +111,7 @@
           <li><span class="n">3</span><span><b>Detalles de la reserva</b>: <b>Llegada</b>, <b>Salida</b>, <b>Noches</b> y <b>Huéspedes</b>. Confirma la fecha de salida con el huésped.</span></li>
           <li><span class="n">4</span><span><b>Peticiones especiales</b>: lo que pidió el huésped al reservar. Léelo antes de darle la llave.</span></li>
           <li><span class="n">5</span><span><b>Importe total</b> y, debajo, <span class="termino">Pago pendiente</span>: lo que falta por cobrar.</span></li>
-          <li><span class="n">6</span><span><span class="boton-ui">Check-in</span>: abre la ventana para hacer el check-in (paso 3).</span></li>
+          <li><span class="n">6</span><span><span class="boton-ui">Check-in</span>: abre la ventana para hacer el check-in (sección 3).</span></li>
         </ul>
         <div class="nota ojo"><p><b>Cuidado:</b> el botón rojo <b>Cancelar</b> de esta ventana <b>cancela la reserva</b>. Para cerrar la ventana sin cambiar nada, usa <b>✕</b> (arriba a la derecha).</p></div>
         <p class="turno"><b>En tu turno:</b> pregunta «¿Se va el día 13?» y «¿Viene usted solo?». Si algo cambia, corrígelo antes del check-in.</p>
@@ -120,10 +119,10 @@
     </article>
 
     <!-- 3. Ventana Check-in y pago -->
-    <article class="paso">
+    <article class="seccion">
       <div class="num">3</div>
       <div class="cuerpo">
-        <h3 class="titulo-paso">Abre la ventana Check-in y pago</h3>
+        <h3 class="titulo-seccion">Abre la ventana Check-in y pago</h3>
         <p>Pulsa <span class="boton-ui">Check-in</span>. Se abre la ventana <b>Check-in y pago</b>, con dos partes: la identificación del huésped (azul) y el pago (verde).</p>
         <figure class="captura">
           <a href="img/check-in/03-ventana-check-in.jpg" target="_blank"><div class="lienzo">
@@ -138,8 +137,8 @@
         </figure>
         <ul class="leyenda">
           <li><span class="n">1</span><span><b>Check-in y pago</b> y, debajo, el nombre del huésped. Comprueba que es la persona que tienes delante.</span></li>
-          <li><span class="n">2</span><span><b>Verificación de identidad</b>: el documento del huésped (paso 4).</span></li>
-          <li><span class="n">3</span><span><b>Añadir pago</b>: el cobro (paso 5).</span></li>
+          <li><span class="n">2</span><span><b>Verificación de identidad</b>: el documento del huésped (sección 4).</span></li>
+          <li><span class="n">3</span><span><b>Añadir pago</b>: el cobro (sección 5).</span></li>
           <li><span class="n">4</span><span><b>Cancelar</b> (abajo) y <b>✕</b> (arriba): cierran la ventana <b>sin guardar</b>.</span></li>
         </ul>
         <p class="turno"><b>En tu turno:</b> si abriste la ventana del huésped equivocado, pulsa <b>Cancelar</b>. No se guarda nada.</p>
@@ -147,10 +146,10 @@
     </article>
 
     <!-- 4. Identificación -->
-    <article class="paso">
+    <article class="seccion">
       <div class="num">4</div>
       <div class="cuerpo">
-        <h3 class="titulo-paso">Registra la identificación del huésped</h3>
+        <h3 class="titulo-seccion">Registra la identificación del huésped</h3>
         <p>Pide al huésped su identificación y copia los datos en la parte azul.</p>
         <figure class="captura">
           <a href="img/check-in/04-datos-rellenos.jpg" target="_blank"><div class="lienzo">
@@ -172,11 +171,11 @@
     </article>
 
     <!-- 5. Pago -->
-    <article class="paso">
+    <article class="seccion">
       <div class="num">5</div>
       <div class="cuerpo">
-        <h3 class="titulo-paso">Cobra y haz el check-in</h3>
-        <p>En la parte verde, elige cómo paga el huésped. Después pulsa <span class="boton-ui">Cobrar y hacer check-in</span>: registra el pago y el check-in a la vez.</p>
+        <h3 class="titulo-seccion">Cobra y haz el check-in</h3>
+        <p>En la parte verde, elige cómo paga el huésped. Después pulsa <span class="boton-ui verde">Cobrar y hacer check-in</span>: registra el pago y el check-in a la vez.</p>
         <figure class="captura">
           <a href="img/check-in/04-datos-rellenos.jpg" target="_blank"><div class="lienzo">
             <img src="img/check-in/04-datos-rellenos.jpg" alt="Añadir pago con Método de pago Efectivo, Importe 2190.00 y el botón verde Cobrar y hacer check-in activo" loading="lazy">
@@ -194,7 +193,7 @@
           <li><span class="n">2</span><span><b>Importe *</b>: viene con el total de la estancia (aquí, <b>2190.00</b>). Cámbialo solo si el huésped paga otra cantidad.</span></li>
           <li><span class="n">3</span><span><span class="termino">UTI</span> (opcional): el número de la operación, por ejemplo el del comprobante de la terminal.</span></li>
           <li><span class="n">4</span><span><b>Notas</b> (opcional): cualquier aclaración sobre el pago.</span></li>
-          <li><span class="n">5</span><span><span class="boton-ui">Cobrar y hacer check-in</span>: guarda el pago y hace el check-in. Sale en gris hasta que eliges el método de pago.</span></li>
+          <li><span class="n">5</span><span><span class="boton-ui verde">Cobrar y hacer check-in</span>: guarda el pago y hace el check-in. Sale en gris hasta que eliges el método de pago.</span></li>
           <li><span class="n">6</span><span><b>Check-in exprés</b>: el otro botón de check-in. En este manual usamos <b>Cobrar y hacer check-in</b>. Pregunta a tu supervisor antes de usar este.</span></li>
         </ul>
         <div class="nota ojo"><p><b>Cuidado:</b> cobra primero (efectivo en la caja o tarjeta aprobada en la terminal) y después pulsa el botón. FrontDesko registra el pago, pero no cobra por ti.</p></div>
@@ -203,10 +202,10 @@
     </article>
 
     <!-- 6. Comprobar -->
-    <article class="paso">
+    <article class="seccion">
       <div class="num">6</div>
       <div class="cuerpo">
-        <h3 class="titulo-paso">Comprueba que el check-in quedó hecho</h3>
+        <h3 class="titulo-seccion">Comprueba que el check-in quedó hecho</h3>
         <p>Abajo salen dos avisos verdes: <b>Identidad guardada</b> y <b>Pago añadido</b>. Unos segundos después, el estado de la reserva cambia.</p>
         <figure class="captura">
           <a href="img/check-in/05-alojada.jpg" target="_blank"><div class="lienzo">
@@ -282,14 +281,17 @@
     <details><summary>Quieres cerrar la ventana de la reserva. ¿Qué botón no debes usar?</summary>El rojo <b>Cancelar</b>: cancela la reserva. Cierra con <b>✕</b>.</details>
   </section>
 
-  <section class="tarjeta siguiente no-imprimir">
-    <div>
-      <div style="font-size:13px;color:var(--texto-suave);text-transform:uppercase;letter-spacing:.8px;font-weight:700">Siguiente tema</div>
-      <div style="font-size:20px;font-weight:700;color:var(--carbon)">Hacer el check-out de un huésped</div>
-      <div style="color:var(--texto-suave)">Liquida el folio y libera la habitación.</div>
-    </div>
-    <span class="pronto">Próximamente</span>
-  </section>
+  <nav class="temas-vecinos no-imprimir" aria-label="Otros temas">
+    <a class="tema-anterior" href="04-reserva-sin-cita.html" title="Tema anterior: Crear una reserva sin cita previa"><span class="flecha" aria-hidden="true">←</span>Ir al anterior</a>
+    <section class="tarjeta siguiente">
+      <div>
+        <div style="font-size:13px;color:var(--texto-suave);text-transform:uppercase;letter-spacing:.8px;font-weight:700">Siguiente tema</div>
+        <div style="font-size:20px;font-weight:700;color:var(--carbon)">Hacer el check-out de un huésped</div>
+        <div style="color:var(--texto-suave)">Liquida el folio y libera la habitación.</div>
+      </div>
+      <a class="boton" href="06-check-out.html">Abrir tutorial →</a>
+    </section>
+  </nav>
 
 </main>
 

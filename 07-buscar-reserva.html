@@ -1,0 +1,258 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Encontrar cualquier reserva rápido · Capacitación</title>
+<link rel="icon" href="img/logo.svg">
+<link rel="stylesheet" href="css/estilos.css">
+<script src="js/anotaciones.js" defer></script>
+<script src="js/visor.js" defer></script>
+<script src="js/secciones.js" defer></script>
+</head>
+<body>
+
+<header class="marca-hotel">
+  <div class="contenedor">
+    <a class="identidad" href="index.html">
+      <img src="img/logo.svg" alt="Logotipo Hotel Posada del Desierto">
+      <span class="textos">
+        <span class="nombre-hotel">Hotel Posada del Desierto</span>
+        <span class="separador"></span>
+        <span class="sitio">Capacitación FrontDesko</span>
+      </span>
+    </a>
+    <nav><a href="index.html">Todos los temas</a></nav>
+  </div>
+</header>
+
+<div class="cabecera">
+  <div class="contenedor">
+    <div class="migas"><a href="index.html">Inicio</a> › Recepción: lo básico</div>
+    <span class="etiqueta">Tema 7 · Recepción: lo básico</span>
+    <h1>Encontrar cualquier reserva rápido</h1>
+    <p class="lead">Un huésped llega al mostrador o llama por teléfono. Escribe su nombre arriba, presiona la tecla <kbd class="tecla">Enter</kbd> y abre su reserva, sin recorrer el Tapechart (Calendario de reservas).</p>
+    <div class="fichas">
+      <span class="ficha">Nivel: básico</span>
+      <span class="ficha">Para: recepción</span>
+    </div>
+  </div>
+</div>
+
+<main class="contenedor">
+
+  <section>
+    <h2>Lo que vas a aprender</h2>
+    <ul class="aprenderas">
+      <li>Dónde está la casilla para buscar reservas.</li>
+      <li>Qué puedes escribir: apellido, número de confirmación o habitación.</li>
+      <li>Cómo elegir la reserva correcta cuando salen varias.</li>
+      <li>Cómo abrir la reserva desde la lista de resultados.</li>
+      <li>Qué hacer si la búsqueda no encuentra nada.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cómo empezar</h2>
+    <p>No hace falta abrir ninguna pestaña: la casilla <b>Buscar reservas...</b> está arriba en todas las pantallas de FrontDesko.</p>
+    <p>Busca cualquier reserva del hotel: de hoy, futuras y pasadas, también las canceladas.</p>
+    <div class="nota"><p>Buscar y abrir una reserva para leerla no cambia nada. Puedes probar sin miedo.</p></div>
+  </section>
+
+  <section>
+    <h2>Paso a paso</h2>
+
+    <!-- 1. La casilla -->
+    <article class="seccion">
+      <div class="num">1</div>
+      <div class="cuerpo">
+        <h3 class="titulo-seccion">Escribe en la casilla Buscar reservas</h3>
+        <p>Haz clic en la casilla <b>Buscar reservas...</b>, arriba, y escribe el <b>nombre</b> o el <b>apellido</b> del huésped. Basta con una parte.</p>
+        <figure class="captura">
+          <a href="img/buscar-reserva/01-casilla.jpg" target="_blank"><div class="lienzo">
+            <img src="img/buscar-reserva/01-casilla.jpg" alt="Parte de arriba de FrontDesko con el apellido Robles escrito en la casilla Buscar reservas, las pestañas debajo y el Tapechart (Calendario de reservas)" loading="lazy">
+            <span class="marca caja" style="left:50.4%;top:1%;width:15.2%;height:12.4%" data-n="1"></span>
+            <span class="marca caja" style="left:0.5%;top:15.2%;width:61.9%;height:11.4%" data-n="2"></span>
+            <span class="marca caja" style="left:14.4%;top:79.7%;width:6.1%;height:8.3%" data-n="3"></span>
+          </div></a>
+          <figcaption>La casilla de búsqueda con un apellido escrito. Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Buscar reservas...</b>: escribe aquí. Aún no sale nada: la búsqueda empieza al presionar la tecla <kbd class="tecla">Enter</kbd> (sección 2).</span></li>
+          <li><span class="n">2</span><span><b>Pestañas</b>: da igual en cuál estés. La casilla está siempre arriba.</span></li>
+          <li><span class="n">3</span><span><b>La barra de la reserva</b>: si ya la ves en el <span class="termino">Tapechart (Calendario de reservas)</span>, también puedes hacer clic en ella. La casilla es más rápida cuando no sabes la habitación ni la fecha.</span></li>
+        </ul>
+        <p>Qué puedes escribir:</p>
+        <ul>
+          <li><b>Nombre o apellido</b>, o solo una parte: <code>Laura</code> encuentra a <b>Laura Méndez Soto</b> y <code>Rob</code> encuentra a <b>Robles</b>. Da igual si escribes en mayúsculas o minúsculas, y el orden de las palabras.</li>
+          <li><b><span class="termino">Número de confirmación</span></b>, entero o solo el final: <code>HO0008</code> o <code>0008</code>.</li>
+          <li><b>Número de habitación</b>, solo los números: <code>115</code>, no <code>SENC-115</code>.</li>
+          <li><b>Email</b> o <b>teléfono</b>, si la reserva los tiene.</li>
+        </ul>
+        <p class="turno"><b>En tu turno:</b> pregunta «¿A nombre de quién está la reserva?». El apellido suele dar menos resultados que el nombre, porque los nombres se repiten más.</p>
+      </div>
+    </article>
+
+    <!-- 2. Enter y resultado -->
+    <article class="seccion">
+      <div class="num">2</div>
+      <div class="cuerpo">
+        <h3 class="titulo-seccion">Presiona Enter y mira el resultado</h3>
+        <p>Presiona la tecla <kbd class="tecla">Enter</kbd> del teclado. Se abre la ventana <b>Resultados de búsqueda</b> con las reservas que coinciden.</p>
+        <figure class="captura">
+          <a href="img/buscar-reserva/02-resultado.jpg" target="_blank"><div class="lienzo">
+            <img src="img/buscar-reserva/02-resultado.jpg" alt="Ventana Resultados de búsqueda para Robles con 1 resultado: HO0008, Andrés Robles Fuentes, habitación 115, estado Con check-out" loading="lazy">
+            <span class="marca caja" style="left:3%;top:30.7%;width:39%;height:13.7%" data-n="1"></span>
+            <span class="marca caja" style="left:3.1%;top:63.4%;width:93.4%;height:19.5%" data-n="2"></span>
+            <span class="marca caja" style="left:94.6%;top:29%;width:2.9%;height:12.7%" data-n="3"></span>
+          </div></a>
+          <figcaption>Una sola reserva coincide con «Robles». Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Lo que buscaste</b> y <b>cuántas reservas</b> salieron.</span></li>
+          <li><span class="n">2</span><span><b>La reserva</b>: número, nombre, habitación y estado. Haz clic en cualquier parte de la fila para abrirla (sección 4).</span></li>
+          <li><span class="n">3</span><span><b>✕</b>: cierra la lista sin abrir nada.</span></li>
+        </ul>
+        <p class="turno"><b>En tu turno:</b> si sale una sola reserva, confirma el nombre con el huésped y ábrela.</p>
+      </div>
+    </article>
+
+    <!-- 3. Varios resultados -->
+    <article class="seccion">
+      <div class="num">3</div>
+      <div class="cuerpo">
+        <h3 class="titulo-seccion">Si salen varias, elige la correcta</h3>
+        <p>Con un apellido común o un número corto pueden salir varias reservas. Usa las columnas para saber cuál es.</p>
+        <figure class="captura">
+          <a href="img/buscar-reserva/03-varios-resultados.jpg" target="_blank"><div class="lienzo">
+            <img src="img/buscar-reserva/03-varios-resultados.jpg" alt="Resultados de búsqueda con 8 reservas, de HO0001 a HO0008, con estados Con check-out, No presentado, Cancelada y Confirmada" loading="lazy">
+            <span class="marca caja" style="left:3.7%;top:25.9%;width:14%;height:66.4%" data-n="1"></span>
+            <span class="marca caja" style="left:54.2%;top:25.9%;width:13.6%;height:66.4%" data-n="2"></span>
+            <span class="marca caja" style="left:70.3%;top:25.9%;width:12.4%;height:66.4%" data-n="3"></span>
+            <span class="marca caja" style="left:83.7%;top:25.9%;width:10.9%;height:66.4%" data-n="4"></span>
+          </div></a>
+          <figcaption>Ocho reservas para «HO000». Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>N.º de confirmación</b>: cada reserva tiene el suyo. Es la forma más segura de distinguirlas.</span></li>
+          <li><span class="n">2</span><span><b>Llegada</b> y <b>Salida</b>: pueden salir con un guion (<b>-</b>). Para ver las fechas, abre la reserva.</span></li>
+          <li><span class="n">3</span><span><b>Habitación</b>: un guion quiere decir que la reserva no tiene habitación (por ejemplo, si se canceló).</span></li>
+          <li><span class="n">4</span><span><b>Estado</b> de la reserva: <span class="termino">Confirmada</span> (aún no llega), <span class="termino">Con check-out</span> (ya se fue), <span class="termino">No presentado</span> y <span class="termino">Cancelada</span>.</span></li>
+        </ul>
+        <p class="turno"><b>En tu turno:</b> si hay dos reservas con el mismo apellido, pregunta el nombre completo o el número de confirmación. Si el huésped viene a hacer el check-in, busca la que está <b>Confirmada</b>.</p>
+      </div>
+    </article>
+
+    <!-- 4. Abrir la reserva -->
+    <article class="seccion">
+      <div class="num">4</div>
+      <div class="cuerpo">
+        <h3 class="titulo-seccion">Abre la reserva</h3>
+        <p>Haz clic en la fila. Se abre la ventana de la reserva, la misma que sale al hacer clic en una barra del Tapechart (Calendario de reservas).</p>
+        <figure class="captura">
+          <a href="img/buscar-reserva/04-reserva.jpg" target="_blank"><div class="lienzo">
+            <img src="img/buscar-reserva/04-reserva.jpg" alt="Ventana de la reserva de Andrés Robles Fuentes, número de confirmación HO0008, estado CHECKED_OUT, con la flecha Atrás arriba a la izquierda y la X para cerrar arriba a la derecha" loading="lazy">
+            <span class="marca caja" style="left:4.4%;top:7%;width:18.2%;height:4.6%" data-n="1"></span>
+            <span class="marca caja" style="left:38.8%;top:39.7%;width:22.5%;height:6.1%" data-n="2"></span>
+            <span class="marca" style="left:5.9%;top:5.1%;width:4.05%;min-width:27px" data-n="3"></span>
+            <span class="marca" style="left:94.5%;top:3.7%;width:4.05%;min-width:27px" data-n="4"></span>
+          </div></a>
+          <figcaption>La reserva abierta desde la búsqueda. Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Fechas y estado</b>, debajo del nombre: comprueba que es el huésped que tienes delante. Aquí el estado sale como <b>CHECKED_OUT</b>: es el mismo <b>Con check-out</b> de la lista.</span></li>
+          <li><span class="n">2</span><span><b>N.º de confirmación</b> y <b>Estado</b>.</span></li>
+          <li><span class="n">3</span><span><b>← Atrás</b>: cierra la pantalla de la reserva y vuelve a la de antes, no a la lista de resultados.</span></li>
+          <li><span class="n">4</span><span><b>✕</b>: cierra la pantalla de la reserva. La reserva no cambia.</span></li>
+        </ul>
+        <p>Desde aquí sigues con lo que necesite el huésped: <a href="05-check-in.html">hacer el check-in</a>, <a href="06-check-out.html">hacer el check-out</a> o revisar su cuenta.</p>
+        <p class="turno"><b>En tu turno:</b> lee en voz alta el nombre y las fechas de la reserva, y espera a que el huésped diga que sí. Así confirmas que es la correcta.</p>
+      </div>
+    </article>
+
+    <!-- 5. Sin resultados -->
+    <article class="seccion">
+      <div class="num">5</div>
+      <div class="cuerpo">
+        <h3 class="titulo-seccion">Si no sale nada</h3>
+        <p>Si ninguna reserva coincide, la ventana dice <b>No se encontraron reservas</b>.</p>
+        <figure class="captura">
+          <a href="img/buscar-reserva/05-sin-resultados.jpg" target="_blank"><div class="lienzo">
+            <img src="img/buscar-reserva/05-sin-resultados.jpg" alt="Resultados de búsqueda para mendez sin acento: 0 resultados, No se encontraron reservas" loading="lazy">
+            <span class="marca caja" style="left:50.7%;top:1.3%;width:24%;height:10.8%" data-n="1"></span>
+            <span class="marca caja" style="left:24.4%;top:20%;width:17.7%;height:9.5%" data-n="2"></span>
+            <span class="marca caja" style="left:38.8%;top:43.2%;width:22.3%;height:37%" data-n="3"></span>
+          </div></a>
+          <figcaption>«mendez», sin acento, no encuentra a Laura Méndez. Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Lo que escribiste</b>: revísalo primero. Aquí falta el acento.</span></li>
+          <li><span class="n">2</span><span><b>0 RESULTADOS</b>.</span></li>
+          <li><span class="n">3</span><span><b>No se encontraron reservas</b>: prueba otra forma de buscar (lista de abajo).</span></li>
+        </ul>
+        <div class="nota ojo"><p><b>Cuidado:</b> los acentos cuentan. <code>mendez</code> no encuentra a <b>Méndez</b>, y <code>andres</code> no encuentra a <b>Andrés</b>. Escribe el acento o busca por otra palabra que no lo tenga.</p></div>
+        <p>Antes de decir que no hay reserva, prueba:</p>
+        <ul>
+          <li><b>Con o sin acento</b>, o con otra palabra del nombre.</li>
+          <li><b>Solo una parte</b> del apellido: <code>Rob</code>. Así no importa si está mal escrito al final.</li>
+          <li><b>El número de confirmación</b>, si el huésped lo tiene en su correo.</li>
+          <li><b>La habitación</b>, solo con números: <code>115</code>.</li>
+        </ul>
+        <p>La casilla solo busca <b>reservas</b>. Un huésped que nunca tuvo una no sale aquí, aunque esté en la pestaña <span class="pestana-ui">Huéspedes</span>.</p>
+        <p class="turno"><b>En tu turno:</b> si sigues sin encontrarla, pide al huésped el correo de confirmación o el nombre con el que se hizo la reserva (a veces reserva otra persona). Si no aparece, avisa a tu supervisor.</p>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2>La búsqueda de principio a fin</h2>
+    <ol class="flujo">
+      <li><b>Escribe</b>Nombre, apellido, número o habitación en Buscar reservas</li>
+      <li><b>Enter</b>Sale la lista de resultados</li>
+      <li><b>Elige</b>Por número, habitación y estado</li>
+      <li><b>Abre</b>Clic en la fila: se abre la reserva</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Glosario</h2>
+    <dl class="glosario">
+      <dt>Número de confirmación</dt><dd>Código único de cada reserva, por ejemplo <b>HO0008</b>. Sale en la lista de resultados y en la ventana de la reserva.</dd>
+      <dt>Tapechart (Calendario de reservas)</dt><dd>Cuadro con todas las habitaciones del hotel en filas y las noches en columnas. Cada reserva es una barra.</dd>
+      <dt>Confirmada</dt><dd>Reserva hecha cuyo huésped aún no ha llegado.</dd>
+      <dt>Con check-out</dt><dd>El huésped ya se fue y se registró su salida. En la ventana de la reserva sale como <b>CHECKED_OUT</b>.</dd>
+      <dt>No presentado</dt><dd>El huésped tenía reserva, pero no llegó.</dd>
+      <dt>Cancelada</dt><dd>Reserva anulada. Sigue saliendo en la búsqueda, pero sin habitación.</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Repaso rápido</h2>
+    <p>Intenta responder antes de abrir cada respuesta.</p>
+    <details><summary>¿Dónde está la casilla para buscar reservas?</summary>Arriba, en la barra de FrontDesko: <b>Buscar reservas...</b>. Está en todas las pestañas.</details>
+    <details><summary>Escribiste el nombre y no sale nada. ¿Qué te falta?</summary>Presionar la tecla <kbd class="tecla">Enter</kbd>. Los resultados salen al presionarla, no mientras escribes.</details>
+    <details><summary>Buscas «mendez» y sale 0 resultados, pero el huésped está alojado. ¿Por qué?</summary>Falta el acento: <b>Méndez</b>. Escríbelo con acento o busca por el nombre o el número de confirmación.</details>
+    <details><summary>¿Cómo buscas por habitación?</summary>Solo con el número: <code>115</code>. Con <code>SENC-115</code> no sale nada.</details>
+    <details><summary>Salen dos reservas con el mismo apellido. ¿Cómo sabes cuál es?</summary>Mira el <b>N.º de confirmación</b>, la <b>Habitación</b> y el <b>Estado</b>. Si el huésped llega, suele ser la <b>Confirmada</b>. Si dudas, pregúntale su nombre completo.</details>
+  </section>
+
+  <nav class="temas-vecinos no-imprimir" aria-label="Otros temas">
+    <a class="tema-anterior" href="06-check-out.html" title="Tema anterior: Hacer el check-out de un huésped"><span class="flecha" aria-hidden="true">←</span>Ir al anterior</a>
+    <section class="tarjeta siguiente">
+      <div>
+        <div style="font-size:13px;color:var(--texto-suave);text-transform:uppercase;letter-spacing:.8px;font-weight:700">Siguiente tema</div>
+        <div style="font-size:20px;font-weight:700;color:var(--carbon)">Trabajar con la lista de reservas</div>
+        <div style="color:var(--texto-suave)">Busca y filtra todas las reservas en una lista, en lugar del Tapechart (Calendario de reservas).</div>
+      </div>
+      <span class="pronto">Próximamente</span>
+    </section>
+  </nav>
+
+</main>
+
+<footer>
+  <div class="contenedor"><img src="img/logo.svg" alt="">Hotel Posada del Desierto · Manual interno de FrontDesko · Los nombres de huéspedes en las capturas son ficticios.</div>
+</footer>
+
+</body>
+</html>

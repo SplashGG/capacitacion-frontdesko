@@ -26,7 +26,7 @@
 * { box-sizing: border-box; }
 html {
   scroll-behavior: smooth;
-  /* Lectura guiada (js/pasos.js): los saltos y el ajuste dejan el paso justo bajo la cabecera fija */
+  /* Lectura guiada (js/secciones.js): los saltos y el ajuste dejan la sección justo bajo la cabecera fija */
   scroll-padding-top: calc(var(--alto-cabecera, 120px) + 12px);
   scroll-snap-type: y proximity;
 }
@@ -62,7 +62,7 @@ code { background: var(--naranja-claro); padding: 0 5px; border-radius: 4px; fon
   font-size: 15px; color: var(--carbon); white-space: nowrap;
 }
 .marca-hotel .separador { width: 1px; height: 28px; background: var(--borde); flex: none; }
-.marca-hotel .seccion { font-weight: 650; font-size: 15px; color: var(--naranja-texto); white-space: nowrap; }
+.marca-hotel .sitio { font-weight: 650; font-size: 15px; color: var(--naranja-texto); white-space: nowrap; }
 .marca-hotel nav { margin-left: auto; display: flex; gap: 4px; }
 .marca-hotel nav a { text-decoration: none; color: var(--texto); font-size: 15px; font-weight: 600; padding: 6px 12px; border-radius: 8px; }
 .marca-hotel nav a:hover { background: var(--naranja-claro); color: var(--naranja-texto); }
@@ -71,7 +71,7 @@ code { background: var(--naranja-claro); padding: 0 5px; border-radius: 4px; fon
    Navegadores sin soporte: la cabecera se queda en su tamaño normal. */
 @supports (animation-timeline: scroll()) {
   .marca-hotel .contenedor, .marca-hotel .identidad img, .marca-hotel .nombre-hotel,
-  .marca-hotel .seccion, .marca-hotel .separador, .marca-hotel nav a {
+  .marca-hotel .sitio, .marca-hotel .separador, .marca-hotel nav a {
     animation: linear both;
     animation-timeline: scroll();
     animation-range: 0 120px;
@@ -79,14 +79,14 @@ code { background: var(--naranja-claro); padding: 0 5px; border-radius: 4px; fon
   .marca-hotel .contenedor { animation-name: compacta-fila; }
   .marca-hotel .identidad img { animation-name: compacta-logo; }
   .marca-hotel .nombre-hotel { animation-name: compacta-nombre; }
-  .marca-hotel .seccion { animation-name: compacta-seccion; }
+  .marca-hotel .sitio { animation-name: compacta-sitio; }
   .marca-hotel .separador { animation-name: compacta-separador; }
   .marca-hotel nav a { animation-name: compacta-enlace; }
 }
 @keyframes compacta-fila { to { min-height: 42px; } }
 @keyframes compacta-logo { to { width: 26px; height: 26px; } }
 @keyframes compacta-nombre { to { font-size: 11px; } }
-@keyframes compacta-seccion { to { font-size: 12px; } }
+@keyframes compacta-sitio { to { font-size: 12px; } }
 @keyframes compacta-separador { to { height: 16px; } }
 @keyframes compacta-enlace { to { font-size: 13px; padding: 2px 10px; } }
 
@@ -108,8 +108,8 @@ code { background: var(--naranja-claro); padding: 0 5px; border-radius: 4px; fon
 /* ---------- Secciones ---------- */
 main.contenedor { padding-top: 36px; padding-bottom: 64px; }
 section { margin: 0 0 52px; }
-/* Separadores horizontales entre secciones y entre pasos */
-main > section + section:not(.tarjeta), .paso + .paso { border-top: 1px solid #ddd2c3; padding-top: 40px; }
+/* Separadores horizontales entre secciones y entre secciones de un tema */
+main > section + section:not(.tarjeta), .seccion + .seccion { border-top: 1px solid #ddd2c3; padding-top: 40px; }
 h2 { font-size: 26px; line-height: 1.25; margin: 0 0 16px; color: var(--carbon); }
 h2::before { content: ""; display: block; width: 36px; height: 4px; border-radius: 2px; background: var(--naranja); margin-bottom: 10px; }
 h3 { font-size: 20px; margin: 0 0 8px; color: var(--carbon); }
@@ -117,7 +117,7 @@ h3 { font-size: 20px; margin: 0 0 8px; color: var(--carbon); }
 
 .aprenderas { columns: 2; column-gap: 12px; list-style: none; padding: 0; margin: 0; }
 .aprenderas li { background: var(--blanco); border: 1px solid var(--borde); border-radius: var(--radio); padding: 10px 14px 10px 54px; margin-bottom: 10px; min-height: 50px; position: relative; break-inside: avoid; }
-/* Icono de birrete (aprender), sin números: no son pasos. Trazo = --naranja-texto (#a65c00) */
+/* Icono de birrete (aprender), sin números: no son secciones. Trazo = --naranja-texto (#a65c00) */
 .aprenderas li::before {
   content: ""; position: absolute; left: 12px; top: 8px; width: 32px; height: 32px; border-radius: 50%;
   background: var(--naranja-claro) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%23a65c00' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 10 12 5 2 10l10 5 10-5z'/%3E%3Cpath d='M6 12v5c3 2 9 2 12 0v-5'/%3E%3Cpath d='M22 10v6'/%3E%3C/svg%3E") center / 21px no-repeat;
@@ -134,61 +134,63 @@ h3 { font-size: 20px; margin: 0 0 8px; color: var(--carbon); }
 .nota p { margin: 0; }
 
 /* ---------- Pasos ---------- */
-.paso { display: grid; grid-template-columns: 56px 1fr; gap: 0 20px; margin: 0 0 48px; scroll-snap-align: start; }
-.paso .num { width: 48px; height: 48px; border-radius: 50%; background: var(--naranja-fuerte); color: #fff; font-weight: 800; font-size: 20px; display: grid; place-items: center; box-shadow: 0 0 0 5px var(--naranja-claro); }
-.paso .cuerpo { min-width: 0; }
-.paso .titulo-paso { font-size: 22px; margin: 6px 0 12px; color: var(--carbon); }
-.paso .accion { display: flex; gap: 10px; align-items: flex-start; background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px 14px; margin: 14px 0 0; }
-.paso .accion .icono { flex: none; width: 26px; height: 26px; border-radius: 6px; background: var(--naranja); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 13px; }
-.paso .turno { margin: 10px 0 0; padding: 12px 14px; border-radius: 10px; background: var(--salvia-claro); }
-.paso .turno b { color: var(--salvia); }
-.siguiente-paso { display: inline-block; margin-top: 18px; padding: 8px 18px; border: 1px solid var(--naranja); border-radius: 10px; background: var(--blanco); color: var(--naranja-texto); font-weight: 700; font-size: 15px; text-decoration: none; }
-.siguiente-paso:hover, .siguiente-paso:focus-visible { background: var(--naranja-claro); outline: none; }
+.seccion { display: grid; grid-template-columns: 56px 1fr; gap: 0 20px; margin: 0 0 48px; scroll-snap-align: start; }
+.seccion .num { width: 48px; height: 48px; border-radius: 50%; background: var(--naranja-fuerte); color: #fff; font-weight: 800; font-size: 20px; display: grid; place-items: center; box-shadow: 0 0 0 5px var(--naranja-claro); }
+.seccion .cuerpo { min-width: 0; }
+.seccion .titulo-seccion { font-size: 22px; margin: 6px 0 12px; color: var(--carbon); }
+.seccion .accion { display: flex; gap: 10px; align-items: flex-start; background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px; padding: 12px 14px; margin: 14px 0 0; }
+.seccion .accion .icono { flex: none; width: 26px; height: 26px; border-radius: 6px; background: var(--naranja); color: #fff; display: grid; place-items: center; font-weight: 800; font-size: 13px; }
+.seccion .turno { margin: 10px 0 0; padding: 12px 14px; border-radius: 10px; background: var(--salvia-claro); }
+.seccion .turno b { color: var(--salvia); }
+.siguiente-seccion { display: inline-block; margin-top: 22px; padding: 14px 32px; border: 2px solid var(--naranja); border-radius: 12px; background: var(--blanco); color: var(--naranja-texto); font-weight: 700; font-size: 17px; text-decoration: none; }
+.siguiente-seccion:hover, .siguiente-seccion:focus-visible { background: var(--naranja-claro); outline: none; }
 
-/* Barra de pasos bajo la cabecera (js/pasos.js) */
-.barra-pasos { border-top: 1px solid var(--borde); }
-.barra-pasos .contenedor { display: flex; align-items: center; gap: 14px; min-height: 44px; }
-.barra-pasos .donde { font-size: 14px; font-weight: 700; color: var(--carbon); white-space: nowrap; }
-.barra-pasos .puntos { display: flex; gap: 6px; flex-wrap: wrap; }
-.barra-pasos .puntos a { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 700; text-decoration: none; color: var(--texto-suave); background: var(--blanco); border: 1px solid var(--borde); }
-.barra-pasos .puntos a:hover { border-color: var(--naranja); color: var(--naranja-texto); }
-.barra-pasos .puntos a.hecho { background: var(--naranja-claro); border-color: var(--naranja-claro); color: var(--naranja-texto); }
-.barra-pasos .puntos a.actual { background: var(--naranja-fuerte); border-color: var(--naranja-fuerte); color: #fff; }
+/* Barra de secciones bajo la cabecera (js/secciones.js) */
+.barra-secciones { border-top: 1px solid var(--borde); }
+.barra-secciones .contenedor { display: flex; align-items: center; gap: 14px; min-height: 44px; }
+.barra-secciones .donde { font-size: 14px; font-weight: 700; color: var(--carbon); white-space: nowrap; }
+.barra-secciones .puntos { display: flex; gap: 6px; flex-wrap: wrap; }
+.barra-secciones .puntos a { width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 700; text-decoration: none; color: var(--texto-suave); background: var(--blanco); border: 1px solid var(--borde); }
+.barra-secciones .puntos a:hover { border-color: var(--naranja); color: var(--naranja-texto); }
+.barra-secciones .puntos a.hecho { background: var(--naranja-claro); border-color: var(--naranja-claro); color: var(--naranja-texto); }
+.barra-secciones .puntos a.actual { background: var(--naranja-fuerte); border-color: var(--naranja-fuerte); color: #fff; }
 
-/* Índice vertical de pasos a la izquierda (js/pasos.js), solo en pantallas anchas.
-   Ocupa el margen libre a la izquierda del contenido y acompaña mientras se leen los pasos. */
-.indice-pasos { display: none; }
-@media (min-width: 1280px) {
-  .barra-pasos { display: none; }
+/* Índice vertical de secciones a la izquierda (js/secciones.js), solo en pantallas anchas (desde 1350px), siempre con títulos.
+   Ocupa el margen libre a la izquierda del contenido y acompaña mientras se leen las secciones.
+   Por debajo de 1350px no cabe con títulos: en su lugar sale la barra «Sección N de M» arriba. */
+.indice-secciones { display: none; }
+@media (min-width: 1350px) {
+  .barra-secciones { display: none; }
   .con-indice { position: relative; }
-  .indice-pasos {
+  .indice-secciones {
     display: block; position: absolute; top: 0; bottom: 0;
     right: calc(100% + 24px); width: min(240px, calc((100vw - 1040px) / 2 - 24px));
   }
-  .indice-pasos .fijo { position: sticky; top: calc(var(--alto-cabecera, 70px) + 24px); }
-  .indice-pasos .donde { display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--texto-suave); margin-bottom: 10px; }
-  .indice-pasos ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
-  /* Cada paso es una fila-botón: fondo blanco, borde y sombra; al pasar el ratón se resalta y aparece la flecha */
-  .indice-pasos a {
+  .indice-secciones .fijo { position: sticky; top: calc(var(--alto-cabecera, 70px) + 24px); }
+  .indice-secciones .donde { display: block; font-size: 13px; font-weight: 700; text-transform: uppercase; letter-spacing: .6px; color: var(--texto-suave); margin-bottom: 10px; }
+  .indice-secciones ol { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+  /* Cada sección es una fila-botón: fondo blanco, borde y sombra; al pasar el ratón se resalta y aparece la flecha */
+  .indice-secciones a {
     display: flex; align-items: center; gap: 10px; padding: 7px 10px 7px 7px;
     text-decoration: none; color: var(--texto); font-size: 14px; font-weight: 600; line-height: 1.3;
     background: var(--blanco); border: 1px solid var(--borde); border-radius: 10px;
     box-shadow: 0 1px 2px rgba(43, 39, 36, .06);
     transition: border-color .15s, background-color .15s, transform .15s;
   }
-  .indice-pasos a::after { content: "›"; margin-left: auto; font-size: 18px; line-height: 1; color: var(--naranja-texto); opacity: 0; transition: opacity .15s; }
-  .indice-pasos .n { flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 700; background: var(--arena); border: 1px solid var(--borde); color: var(--texto-suave); }
-  .indice-pasos .t { display: none; }
-  .indice-pasos a:hover, .indice-pasos a:focus-visible { border-color: var(--naranja); background: var(--naranja-claro); transform: translateX(3px); outline: none; }
-  .indice-pasos a:hover::after, .indice-pasos a:focus-visible::after { opacity: 1; }
-  .indice-pasos a.hecho .n { background: var(--naranja-claro); border-color: var(--naranja-claro); color: var(--naranja-texto); }
-  .indice-pasos a.actual { border-color: var(--naranja); background: var(--naranja-claro); color: var(--carbon); font-weight: 700; box-shadow: inset 4px 0 0 var(--naranja-fuerte); }
-  .indice-pasos a.actual .n { background: var(--naranja-fuerte); border-color: var(--naranja-fuerte); color: #fff; }
-  @media (prefers-reduced-motion: reduce) { .indice-pasos a { transition: none; } .indice-pasos a:hover { transform: none; } }
+  .indice-secciones a::after { content: "›"; margin-left: auto; font-size: 18px; line-height: 1; color: var(--naranja-texto); opacity: 0; transition: opacity .15s; }
+  .indice-secciones .n { flex: none; width: 28px; height: 28px; border-radius: 50%; display: grid; place-items: center; font-size: 13px; font-weight: 700; background: var(--arena); border: 1px solid var(--borde); color: var(--texto-suave); }
+  .indice-secciones a:hover, .indice-secciones a:focus-visible { border-color: var(--naranja); background: var(--naranja-claro); transform: translateX(3px); outline: none; }
+  .indice-secciones a:hover::after, .indice-secciones a:focus-visible::after { opacity: 1; }
+  .indice-secciones a.hecho .n { background: var(--naranja-claro); border-color: var(--naranja-claro); color: var(--naranja-texto); }
+  .indice-secciones a.actual { border-color: var(--naranja); background: var(--naranja-claro); color: var(--carbon); font-weight: 700; box-shadow: inset 4px 0 0 var(--naranja-fuerte); }
+  .indice-secciones a.actual .n { background: var(--naranja-fuerte); border-color: var(--naranja-fuerte); color: #fff; }
+  @media (prefers-reduced-motion: reduce) { .indice-secciones a { transition: none; } .indice-secciones a:hover { transform: none; } }
 }
-/* Con más espacio, el índice muestra también el título de cada paso */
-@media (min-width: 1600px) {
-  .indice-pasos .t { display: block; }
+/* Columna estrecha (menos de 200px): botones más compactos para que quepan los títulos */
+@media (min-width: 1350px) and (max-width: 1499px) {
+  .indice-secciones a { gap: 7px; padding: 6px 6px 6px 5px; font-size: 13px; }
+  .indice-secciones a::after { display: none; }
+  .indice-secciones .n { width: 24px; height: 24px; font-size: 12px; }
 }
 
 .leyenda { list-style: none; padding: 0; margin: 14px 0 0; display: grid; gap: 8px; }
@@ -198,6 +200,12 @@ h3 { font-size: 20px; margin: 0 0 8px; color: var(--carbon); }
 /* Imitan elementos de FrontDesko (se mantienen en azul como en el sistema) */
 .boton-ui { display: inline-block; background: #1a73d9; color: #fff; font-weight: 600; font-size: 14px; padding: 1px 10px; border-radius: 6px; white-space: nowrap; }
 .boton-ui.borde { background: #fff; color: #1a73d9; border: 1px solid #1a73d9; }
+.boton-ui.morado { background: #7f57d9; } /* botón Check-out de FrontDesko */
+.boton-ui.verde { background: #39a068; } /* botones de cobro de FrontDesko (Cobrar y hacer check-in/check-out) */
+/* Tecla del teclado: <kbd class="tecla">Enter</kbd> se dibuja como una tecla, con el icono ↵ a la izquierda. */
+.tecla { display: inline-block; background: var(--blanco); color: var(--carbon); font: inherit; font-weight: 700; font-size: 14px; line-height: 1.4; padding: 0 9px; border: 1px solid var(--texto-suave); border-bottom-width: 3px; border-radius: 6px; white-space: nowrap; }
+.tecla::before { content: ""; display: inline-block; width: 15px; height: 15px; margin-right: 5px; vertical-align: -2px;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Cpath fill='%232b2724' d='M19 5v6H7.83l3.58-3.59L10 6l-6 6 6 6 1.41-1.41L7.83 13H21V5z'/%3E%3C/svg%3E") no-repeat center / contain; }
 .pestana-ui { display: inline-block; border: 1px solid #d6dde6; background: #fff; color: #1d2733; font-weight: 600; font-size: 14px; padding: 1px 10px; border-radius: 6px; white-space: nowrap; }
 .etiqueta-ui { display: inline-block; font-size: 12px; font-weight: 700; padding: 0 6px; border-radius: 4px; }
 .etiqueta-ui.limpia { background: #d9f5e3; color: #1f7a45; }
@@ -208,7 +216,7 @@ h3 { font-size: 20px; margin: 0 0 8px; color: var(--carbon); }
 .captura img { border-radius: 10px 10px 0 0; }
 .captura a { display: block; cursor: zoom-in; }
 .captura figcaption { font-size: 14px; color: var(--texto-suave); padding: 8px 14px; border-top: 1px solid var(--borde); background: #fdfbf8; border-radius: 0 0 10px 10px; }
-.captura .lienzo { position: relative; }
+.captura .lienzo { position: relative; width: fit-content; max-width: 100%; } /* se ajusta a la imagen: los marcadores van en % de la imagen, también si es más estrecha que la página */
 .marca {
   position: absolute; width: 4.5%; aspect-ratio: 1; min-width: 30px;
   transform: translate(-50%, -50%);
@@ -304,8 +312,15 @@ dl.glosario { display: grid; grid-template-columns: max-content 1fr; gap: 10px 2
 dl.glosario dt { font-weight: 700; color: var(--carbon); }
 dl.glosario dd { margin: 0; }
 details { background: #fff; border: 1px solid var(--borde); border-radius: 10px; padding: 12px 16px; margin: 0 0 10px; }
-details summary { cursor: pointer; font-weight: 600; }
-details[open] summary { margin-bottom: 8px; color: var(--naranja-texto); }
+/* La pregunta ocupa toda la tarjeta (márgenes negativos = relleno del details): se abre con un clic en cualquier parte. */
+details summary { cursor: pointer; font-weight: 600; margin: -12px -16px; padding: 12px 16px; border-radius: 10px; }
+details[open] summary { margin-bottom: 0; padding-bottom: 8px; color: var(--naranja-texto); }
+/* La respuesta se despliega y aparece suavemente (Chrome/Edge recientes; en otros navegadores se abre sin animación). */
+details { interpolate-size: allow-keywords; }
+details::details-content { block-size: 0; opacity: 0; overflow: hidden; transition: block-size .22s ease, opacity .22s ease, content-visibility .22s allow-discrete; }
+details[open]::details-content { block-size: auto; opacity: 1; }
+details summary { transition: padding-bottom .22s ease, color .22s ease; }
+@media (prefers-reduced-motion: reduce) { details, details summary, details::details-content { transition: none; } }
 
 /* ---------- Índice (portada) ---------- */
 .temas { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
@@ -323,6 +338,14 @@ details[open] summary { margin-bottom: 8px; color: var(--naranja-texto); }
 
 /* ---------- Pie ---------- */
 .siguiente { display: flex; justify-content: space-between; align-items: center; gap: 16px; flex-wrap: wrap; }
+/* Final de cada tema: botón «Ir al anterior» a la izquierda (misma altura) y tarjeta «Siguiente tema».
+   El primer tema no tiene anterior: ahí solo va la tarjeta. */
+.temas-vecinos { display: flex; align-items: stretch; gap: 16px; margin: 0 0 52px; }
+.temas-vecinos .siguiente { flex: 1; margin: 0; }
+.tema-anterior { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 4px; padding: 14px 28px; background: var(--carbon); color: #fff; font-weight: 700; font-size: 17px; text-decoration: none; white-space: nowrap; border-radius: var(--radio); box-shadow: var(--sombra); }
+.tema-anterior .flecha { font-size: 40px; line-height: 1; } /* flecha grande, encima del texto */
+.tema-anterior:hover, .tema-anterior:focus-visible { outline: 3px solid var(--naranja); outline-offset: 2px; }
+@media (max-width: 640px) { .temas-vecinos { flex-direction: column-reverse; } } /* en móvil: tarjeta arriba, botón debajo */
 footer { border-top: 1px solid var(--borde); padding: 20px 0; font-size: 14px; color: var(--texto-suave); background: var(--blanco); }
 footer .contenedor { display: flex; align-items: center; gap: 10px; }
 footer img { width: 22px; height: 22px; }
@@ -333,7 +356,7 @@ footer img { width: 22px; height: 22px; }
   .marca-hotel .identidad { flex-wrap: wrap; row-gap: 0; }
   .marca-hotel .textos { display: flex; flex-direction: column; line-height: 1.25; }
   .marca-hotel .nombre-hotel { font-size: 12px; letter-spacing: .12em; }
-  .marca-hotel .seccion { font-size: 14px; }
+  .marca-hotel .sitio { font-size: 14px; }
   .marca-hotel nav { display: none; }
 }
 @media (min-width: 761px) {
@@ -341,8 +364,8 @@ footer img { width: 22px; height: 22px; }
 }
 @media (max-width: 640px) {
   body { font-size: 16px; }
-  .paso { grid-template-columns: 1fr; }
-  .paso .num { margin-bottom: 6px; }
+  .seccion { grid-template-columns: 1fr; }
+  .seccion .num { margin-bottom: 6px; }
   dl.glosario { grid-template-columns: 1fr; gap: 2px; }
   dl.glosario dd { margin-bottom: 10px; }
   .flujo li:not(:last-child)::after { content: "⬇"; right: 50%; top: auto; bottom: -13px; transform: translateX(50%); }
@@ -358,7 +381,7 @@ footer img { width: 22px; height: 22px; }
   .cabecera { background: none; color: #000; padding: 0 0 12px; border-bottom: 2px solid var(--naranja); }
   .cabecera p.lead, .migas { color: #333; }
   .ficha { border-color: #999; }
-  .paso, .captura, details, .nota { break-inside: avoid; }
+  .seccion, .captura, details, .nota { break-inside: avoid; }
   .marca { animation: none; }
   .termino { text-decoration: none; }
   a { color: inherit; text-decoration: none; }
