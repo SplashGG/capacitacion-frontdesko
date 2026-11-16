@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Trabajar con la lista de reservas · Capacitación</title>
+<link rel="icon" href="img/logo.svg">
+<link rel="stylesheet" href="css/estilos.css">
+<script src="js/anotaciones.js" defer></script>
+<script src="js/visor.js" defer></script>
+<script src="js/secciones.js" defer></script>
+</head>
+<body>
+
+<header class="marca-hotel">
+  <div class="contenedor">
+    <a class="identidad" href="index.html">
+      <img src="img/logo.svg" alt="Logotipo Hotel Posada del Desierto">
+      <span class="textos">
+        <span class="nombre-hotel">Hotel Posada del Desierto</span>
+        <span class="separador"></span>
+        <span class="sitio">Capacitación FrontDesko</span>
+      </span>
+    </a>
+    <nav><a href="index.html">Todos los temas</a></nav>
+  </div>
+</header>
+
+<div class="cabecera">
+  <div class="contenedor">
+    <div class="migas"><a href="index.html">Inicio</a> › Recepción: lo básico</div>
+    <span class="etiqueta">Tema 8 · Recepción: lo básico</span>
+    <h1>Trabajar con la lista de reservas</h1>
+    <p class="lead">Las mismas reservas del Tapechart (Calendario de reservas), pero en una tabla: elige las fechas, filtra por estado u origen y busca a un huésped.</p>
+    <div class="fichas">
+      <span class="ficha">Nivel: básico</span>
+      <span class="ficha">Para: recepción</span>
+    </div>
+  </div>
+</div>
+
+<main class="contenedor">
+
+  <section>
+    <h2>Lo que vas a aprender</h2>
+    <ul class="aprenderas">
+      <li>Cómo abrir la lista de reservas desde el Tapechart (Calendario de reservas).</li>
+      <li>Por qué a veces sale vacía y cómo elegir las fechas.</li>
+      <li>Qué dice cada columna de la tabla.</li>
+      <li>Cómo filtrar por estado u origen.</li>
+      <li>Cómo buscar a un huésped en la lista y abrir su reserva.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Cómo empezar</h2>
+    <p>El Tapechart (Calendario de reservas) y la lista muestran <b>las mismas reservas</b>. Usa el Tapechart para ver las habitaciones, y la lista para ver muchas reservas a la vez: las llegadas de la semana, las canceladas, las de un huésped...</p>
+    <div class="nota"><p>Mirar la lista, filtrar y buscar no cambia nada. Puedes probar sin miedo.</p></div>
+  </section>
+
+  <section>
+    <h2>Paso a paso</h2>
+
+    <!-- 1. Abrir la lista -->
+    <article class="seccion">
+      <div class="num">1</div>
+      <div class="cuerpo">
+        <h3 class="titulo-seccion">Abre la lista</h3>
+        <p>Haz clic en la pestaña <span class="pestana-ui">Reservas</span> y, arriba a la derecha, en el botón <span class="boton-ui borde">Lista</span>.</p>
+        <figure class="captura">
+          <a href="img/lista-reservas/01-boton-lista.jpg" target="_blank"><div class="lienzo">
+            <img src="img/lista-reservas/01-boton-lista.jpg" alt="Parte de arriba del Tapechart (Calendario de reservas) con la pestaña Reservas y el botón Lista a la derecha, junto a Grupo" loading="lazy">
+            <span class="marca caja" style="left:4.2%;top:16.9%;width:4.9%;height:12.3%" data-n="1"></span>
+            <span class="marca caja" style="left:81.9%;top:35.8%;width:4.4%;height:13.1%" data-n="2"></span>
+          </div></a>
+          <figcaption>El botón Lista, en la barra del Tapechart (Calendario de reservas). Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Pestaña Reservas</b>: abre el <span class="termino">Tapechart (Calendario de reservas)</span>.</span></li>
+          <li><span class="n">2</span><span><b>Lista</b>: abre la ventana <b>Gestión de reservas</b>, que ocupa toda la pantalla.</span></li>
+        </ul>
+        <p class="turno"><b>En tu turno:</b> abre la lista cuando necesites ver varias reservas juntas. Para una sola reserva, la casilla <b>Buscar reservas...</b> de arriba es más rápida (tema <a href="07-buscar-reserva.html">Encontrar cualquier reserva rápido</a>).</p>
+      </div>
+    </article>
+
+    <!-- 2. Fechas -->
+    <article class="seccion">
+      <div class="num">2</div>
+      <div class="cuerpo">
+        <h3 class="titulo-seccion">Elige las fechas</h3>
+        <p>Al abrirse, la lista solo muestra las reservas <b>de hoy en adelante</b> (unos dos meses). Si las que buscas son de días pasados, sale <b>No se encontraron reservas</b>, aunque existan.</p>
+        <figure class="captura">
+          <a href="img/lista-reservas/02-lista-vacia.jpg" target="_blank"><div class="lienzo">
+            <img src="img/lista-reservas/02-lista-vacia.jpg" alt="Ventana Gestión de reservas recién abierta: 0 de 0 reservas, fechas From y To rellenas desde hoy, atajos Today, Next 7d, Next 30d, Next 60d y All time, y el mensaje No se encontraron reservas" loading="lazy">
+            <span class="marca caja" style="left:0.8%;top:17%;width:12%;height:12.6%" data-n="1"></span>
+            <span class="marca caja" style="left:1.9%;top:46%;width:28.2%;height:9.8%" data-n="2"></span>
+            <span class="marca caja" style="left:77.2%;top:46.7%;width:20.6%;height:8.6%" data-n="3"></span>
+            <span class="marca caja" style="left:44.3%;top:86.5%;width:11.4%;height:8.4%" data-n="4"></span>
+            <span class="marca caja" style="left:85.9%;top:18.6%;width:5.8%;height:7.9%" data-n="5"></span>
+            <span class="marca" style="left:98.5%;top:4.4%" data-n="6"></span>
+          </div></a>
+          <figcaption>La lista recién abierta: solo busca de hoy en adelante.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Cuántas reservas</b> salen con las fechas y filtros que tienes puestos.</span></li>
+          <li><span class="n">2</span><span><b>From</b> (desde) y <b>To</b> (hasta): escribe otras fechas y pulsa <b>Apply</b>.</span></li>
+          <li><span class="n">3</span><span><b>Atajos de fechas</b>: <b>Today</b> (hoy), <b>Next 7d</b>, <b>Next 30d</b> y <b>Next 60d</b> (los próximos 7, 30 o 60 días) y <b>All time</b> (todas, también las pasadas).</span></li>
+          <li><span class="n">4</span><span><b>No se encontraron reservas</b>: no hay ninguna en esas fechas. Prueba con <b>All time</b>.</span></li>
+          <li><span class="n">5</span><span><b>Importar</b>: carga reservas desde un archivo de Excel de otro sistema. No lo uses.</span></li>
+          <li><span class="n">6</span><span><b>✕</b>: cierra la lista y vuelve al Tapechart (Calendario de reservas).</span></li>
+        </ul>
+        <p class="turno"><b>En tu turno:</b> si buscas una reserva antigua o una que ya se fue, pulsa primero <b>All time</b>.</p>
+      </div>
+    </article>
+
+    <!-- 3. Leer la lista -->
+    <article class="seccion">
+      <div class="num">3</div>
+      <div class="cuerpo">
+        <h3 class="titulo-seccion">Lee la lista</h3>
+        <p>Cada fila es una reserva. Arriba de la tabla, unos contadores resumen lo que estás viendo.</p>
+        <figure class="captura">
+          <a href="img/lista-reservas/03-todas.jpg" target="_blank"><div class="lienzo">
+            <img src="img/lista-reservas/03-todas.jpg" alt="Lista con All time: 8 de 8 reservas, contadores Total 8 y Confirmadas 1, y la tabla con número de confirmación, huésped, fechas, habitación, origen, estado e importe" loading="lazy">
+            <span class="marca caja" style="left:0.8%;top:13.8%;width:6.6%;height:3.8%" data-n="1"></span>
+            <span class="marca caja" style="left:0.8%;top:36.3%;width:79.7%;height:6.8%" data-n="2"></span>
+            <span class="marca caja" style="left:1.5%;top:45.5%;width:22.2%;height:53%" data-n="3"></span>
+            <span class="marca caja" style="left:35.8%;top:45.5%;width:14.6%;height:53%" data-n="4"></span>
+            <span class="marca caja" style="left:52.6%;top:45.5%;width:10.5%;height:53%" data-n="5"></span>
+            <span class="marca caja" style="left:63.3%;top:45.5%;width:9.9%;height:53%" data-n="6"></span>
+            <span class="marca caja" style="left:73.5%;top:45.5%;width:9.9%;height:53%" data-n="7"></span>
+            <span class="marca caja" style="left:83.8%;top:45.5%;width:8.1%;height:53%" data-n="8"></span>
+          </div></a>
+          <figcaption>Todas las reservas del hotel de prueba, con All time. Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>8 de 8 reservas</b>: cuántas salen.</span></li>
+          <li><span class="n">2</span><span><b>Contadores</b>: <b>Total</b>, <b>Con check-in</b> (huéspedes <span class="termino">alojados</span>), <b>Pendientes</b> y <b>Confirmadas</b>, de las reservas que ves.</span></li>
+          <li><span class="n">3</span><span><b>N.º de confirmación</b> y <b>Huésped/Grupo</b>: el nombre y, si lo tiene, el email.</span></li>
+          <li><span class="n">4</span><span><b>Llegada</b> y <b>Salida</b>.</span></li>
+          <li><span class="n">5</span><span><b>Habitación</b>: <b>Not assigned</b> quiere decir que la reserva no tiene habitación asignada.</span></li>
+          <li><span class="n">6</span><span><b><span class="termino">Origen</span></b>: por dónde llegó la reserva, por ejemplo <b>Reserva directa</b> o <b>Sin reserva previa</b>.</span></li>
+          <li><span class="n">7</span><span><b>Estado</b> de la reserva: <span class="termino">Confirmada</span>, <span class="termino">Con check-out</span>, <span class="termino">Cancelada</span>, <span class="termino">No presentado</span>...</span></li>
+          <li><span class="n">8</span><span><b>Importe</b> de la reserva y, en verde, lo que ya se pagó (<b>Pagado</b>).</span></li>
+        </ul>
+        <p class="turno"><b>En tu turno:</b> al empezar el día, pulsa <b>Today</b> para ver de un vistazo las reservas de hoy y sus estados.</p>
+      </div>
+    </article>
+
+    <!-- 4. Filtrar -->
+    <article class="seccion">
+      <div class="num">4</div>
+      <div class="cuerpo">
+        <h3 class="titulo-seccion">Filtra por estado u origen</h3>
+        <p>Abre <b>Todos los estados</b> y elige uno. La lista se queda solo con esas reservas. Puedes combinarlo con las fechas y con <b>Todos los orígenes</b>.</p>
+        <figure class="captura">
+          <a href="img/lista-reservas/04-filtro-estado.jpg" target="_blank"><div class="lienzo">
+            <img src="img/lista-reservas/04-filtro-estado.jpg" alt="Lista filtrada por el estado Cancelada: 3 de 8 reservas, todas con estado Cancelada" loading="lazy">
+            <span class="marca caja" style="left:45%;top:32%;width:21.3%;height:7.6%" data-n="1"></span>
+            <span class="marca caja" style="left:66.7%;top:32%;width:10.6%;height:7.6%" data-n="2"></span>
+            <span class="marca caja" style="left:0.8%;top:20.6%;width:6.6%;height:5.7%" data-n="3"></span>
+            <span class="marca caja" style="left:76%;top:73.7%;width:5.3%;height:22%" data-n="4"></span>
+            <span class="marca caja" style="left:93.4%;top:31.8%;width:4.3%;height:7.6%" data-n="5"></span>
+          </div></a>
+          <figcaption>Solo las reservas canceladas. Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Estado</b>: aquí, <b>Cancelada</b>. También puedes elegir, por ejemplo, <b>Confirmada</b>, <b>Con check-in</b>, <b>Con check-out</b> o <b>No presentado</b>.</span></li>
+          <li><span class="n">2</span><span><b>Origen</b>: por dónde llegó la reserva. Por ejemplo, <b>Reserva directa</b> (con el hotel), <b>Sin reserva previa</b> (el huésped llegó al mostrador), por teléfono, o una <span class="termino">OTA</span> como Booking.com. Solo salen los orígenes que ya tienen alguna reserva en el hotel.</span></li>
+          <li><span class="n">3</span><span><b>3 de 8 reservas</b>: 3 cumplen el filtro, de las 8 que hay en esas fechas.</span></li>
+          <li><span class="n">4</span><span>Todas las filas tienen el estado elegido.</span></li>
+          <li><span class="n">5</span><span><b>Borrar</b>: quita los filtros y la búsqueda, y vuelve a las fechas de hoy en adelante (sección 2).</span></li>
+        </ul>
+        <p class="turno"><b>En tu turno:</b> para preparar las llegadas, elige <b>Confirmada</b> y <b>Next 7d</b>: verás las reservas de la semana que aún no han hecho el check-in.</p>
+      </div>
+    </article>
+
+    <!-- 5. Buscar y abrir -->
+    <article class="seccion">
+      <div class="num">5</div>
+      <div class="cuerpo">
+        <h3 class="titulo-seccion">Busca a un huésped y abre su reserva</h3>
+        <p>Escribe en la casilla <b>Buscar reservas...</b> de la lista. Aquí no hace falta presionar <kbd class="tecla">Enter</kbd>: la tabla se filtra mientras escribes.</p>
+        <figure class="captura">
+          <a href="img/lista-reservas/05-buscar.jpg" target="_blank"><div class="lienzo">
+            <img src="img/lista-reservas/05-buscar.jpg" alt="Lista con Laura escrito en la casilla de búsqueda: 1 de 8 reservas, la fila de Laura Méndez Soto y el menú de acciones abierto con Ver detalles y Editar" loading="lazy">
+            <span class="marca caja" style="left:2.1%;top:32.7%;width:42.5%;height:7.7%" data-n="1"></span>
+            <span class="marca caja" style="left:0.8%;top:21%;width:6.6%;height:5.8%" data-n="2"></span>
+            <span class="marca caja" style="left:1.3%;top:74.4%;width:80.7%;height:11%" data-n="3"></span>
+            <span class="marca caja" style="left:82.3%;top:84%;width:11.9%;height:13%" data-n="4"></span>
+          </div></a>
+          <figcaption>Búsqueda de «Laura» dentro de la lista. Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Buscar reservas...</b>: nombre o apellido (o una parte), <span class="termino">número de confirmación</span> o email.</span></li>
+          <li><span class="n">2</span><span><b>1 de 8 reservas</b>: cuántas coinciden.</span></li>
+          <li><span class="n">3</span><span><b>La fila</b>: haz clic en ella para abrir la reserva.</span></li>
+          <li><span class="n">4</span><span><b>⋮</b> (Acciones): <b>Ver detalles</b> también abre la reserva. <b>Editar</b> la cambia: no lo uses solo para mirar.</span></li>
+        </ul>
+        <div class="nota ojo"><p><b>Cuidado:</b> esta casilla <b>no busca por número de habitación</b> (la de arriba sí), y los acentos cuentan: <code>mendez</code> no encuentra a <b>Méndez</b>. Si buscas a un huésped de días pasados, pulsa antes <b>All time</b>.</p></div>
+        <p>Al cerrar la reserva con <b>✕</b>, vuelves al Tapechart (Calendario de reservas), no a la lista. Si abres la lista otra vez, los filtros y la búsqueda se borran.</p>
+        <p class="turno"><b>En tu turno:</b> si el huésped no recuerda su número de confirmación, búscalo por su email: suele ser único.</p>
+      </div>
+    </article>
+  </section>
+
+  <section>
+    <h2>La lista de principio a fin</h2>
+    <ol class="flujo">
+      <li><b>Abre</b>Reservas → botón Lista</li>
+      <li><b>Fechas</b>Today, Next 7d... o All time</li>
+      <li><b>Filtra</b>Por estado u origen</li>
+      <li><b>Busca</b>Nombre, número o email</li>
+      <li><b>Abre</b>Clic en la fila</li>
+    </ol>
+  </section>
+
+  <section>
+    <h2>Glosario</h2>
+    <dl class="glosario">
+      <dt>Tapechart (Calendario de reservas)</dt><dd>Cuadro con todas las habitaciones del hotel en filas y las noches en columnas. Cada reserva es una barra.</dd>
+      <dt>Origen</dt><dd>Por dónde llegó la reserva: <b>Reserva directa</b> (con el hotel), <b>Sin reserva previa</b> (el huésped llegó al mostrador sin reservar), por teléfono o desde una OTA como Booking.com.</dd>
+      <dt>OTA</dt><dd>Agencia de viajes en línea (por ejemplo, una web de reservas de hoteles como Booking.com) que vende las habitaciones del hotel.</dd>
+      <dt>Número de confirmación</dt><dd>Código único de cada reserva, por ejemplo <b>HO0007</b>.</dd>
+      <dt>Alojados</dt><dd>Huéspedes que ya hicieron el check-in y están en el hotel. Su estado es <b>Con check-in</b>.</dd>
+      <dt>Confirmada</dt><dd>Reserva hecha cuyo huésped aún no ha llegado.</dd>
+      <dt>Con check-out</dt><dd>El huésped ya se fue y se registró su salida.</dd>
+      <dt>Cancelada</dt><dd>Reserva anulada. Sigue en la lista, pero sin habitación.</dd>
+      <dt>No presentado</dt><dd>El huésped tenía reserva, pero no llegó.</dd>
+    </dl>
+  </section>
+
+  <section>
+    <h2>Repaso rápido</h2>
+    <p>Intenta responder antes de abrir cada respuesta.</p>
+    <details><summary>¿Dónde está el botón para abrir la lista?</summary>En la pestaña <b>Reservas</b>, arriba a la derecha del Tapechart (Calendario de reservas): <b>Lista</b>.</details>
+    <details><summary>Abres la lista y sale «No se encontraron reservas». ¿Qué haces?</summary>Cambia las fechas: la lista empieza de hoy en adelante. Pulsa <b>All time</b> para ver todas.</details>
+    <details><summary>¿Cómo ves solo las reservas canceladas?</summary>En <b>Todos los estados</b>, elige <b>Cancelada</b>.</details>
+    <details><summary>Escribes «115» en la casilla de la lista y no sale nada. ¿Por qué?</summary>La casilla de la lista no busca por habitación. Usa la casilla <b>Buscar reservas...</b> de arriba, o busca por nombre.</details>
+    <details><summary>¿Qué hace el botón Borrar?</summary>Quita los filtros y la búsqueda, y vuelve a las fechas de hoy en adelante.</details>
+  </section>
+
+  <nav class="temas-vecinos no-imprimir" aria-label="Otros temas">
+    <a class="tema-anterior" href="07-buscar-reserva.html" title="Tema anterior: Encontrar cualquier reserva rápido"><span class="flecha" aria-hidden="true">←</span>Ir al anterior</a>
+    <section class="tarjeta siguiente">
+      <div>
+        <div style="font-size:13px;color:var(--texto-suave);text-transform:uppercase;letter-spacing:.8px;font-weight:700">Siguiente tema</div>
+        <div style="font-size:20px;font-weight:700;color:var(--carbon)">Acciones rápidas con clic derecho</div>
+        <div style="color:var(--texto-suave)">Haz el check-in, abre una reserva o crea una nueva directamente desde el Tapechart (Calendario de reservas).</div>
+      </div>
+      <a class="boton" href="09-clic-derecho.html">Abrir tutorial →</a>
+    </section>
+  </nav>
+
+</main>
+
+<footer>
+  <div class="contenedor"><img src="img/logo.svg" alt="">Hotel Posada del Desierto · Manual interno de FrontDesko · Los nombres de huéspedes en las capturas son ficticios.</div>
+</footer>
+
+</body>
+</html>

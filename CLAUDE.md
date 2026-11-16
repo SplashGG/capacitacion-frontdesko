@@ -101,8 +101,8 @@ Marcar con [x] al publicar la página.
 - [x] Hacer el check-in de un huésped → `05-check-in.html`
 - [x] Hacer el check-out de un huésped → `06-check-out.html`
 - [x] Encontrar cualquier reserva rápido → `07-buscar-reserva.html`
-- [ ] Trabajar con la lista de reservas
-- [ ] Acciones rápidas con clic derecho
+- [x] Trabajar con la lista de reservas → `08-lista-reservas.html`
+- [x] Acciones rápidas con clic derecho → `09-clic-derecho.html`
 - [ ] Atender las solicitudes de los huéspedes
 - [ ] Preguntar al asistente de IA
 
