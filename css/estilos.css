@@ -352,6 +352,11 @@ details summary { transition: padding-bottom .22s ease, color .22s ease; }
 .listo { font-size: 12px; color: var(--salvia); background: var(--salvia-claro); border-radius: 999px; padding: 1px 8px; white-space: nowrap; align-self: center; font-weight: 700; }
 .destacado { display: flex; gap: 24px; align-items: center; flex-wrap: wrap; border-left: 5px solid var(--naranja); }
 .destacado .texto { flex: 1 1 300px; }
+/* Toda la tarjeta destacada de la portada es clicable: el enlace .boton se estira sobre ella. */
+.destacado:has(.boton) { position: relative; transition: border-color .15s ease, background-color .15s ease, transform .15s ease; }
+.destacado .boton::after { content: ""; position: absolute; inset: 0; border-radius: inherit; }
+.destacado:has(.boton:hover), .destacado:has(.boton:focus-visible) { background: var(--naranja-claro); border-color: var(--naranja); transform: translateY(-1px); }
+@media (prefers-reduced-motion: reduce) { .destacado:has(.boton) { transition: none; transform: none; } }
 .boton { display: inline-block; background: var(--naranja-fuerte); color: #fff; text-decoration: none; font-weight: 700; padding: 12px 22px; border-radius: 10px; }
 .boton:hover { background: #b46300; }
 

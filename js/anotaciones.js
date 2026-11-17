@@ -29,7 +29,7 @@
   document.body.appendChild(globo);
 
   // 3. Términos (.termino): su definición se toma del glosario de la página (dl.glosario),
-  // buscando el <dt> con el mismo texto (o el de data-termino). Al hacer clic, la página va a ese <dt>.
+  // buscando el <dt> con el mismo texto (o el de data-termino).
   var entradas = {};
   document.querySelectorAll('dl.glosario dt').forEach(function (dt) {
     if (dt.nextElementSibling) entradas[dt.textContent.trim().toLowerCase()] = dt;
@@ -38,7 +38,6 @@
     var dt = entradas[(t.dataset.termino || t.textContent).trim().toLowerCase()];
     if (!dt) return;
     t.dataset.def = dt.nextElementSibling.innerHTML;
-    t.destino = dt;
     t.tabIndex = 0;
   });
 
@@ -73,21 +72,13 @@
   document.addEventListener('pointerout', function (e) {
     if (e.target.closest('.marca, .termino')) ocultar();
   });
-  // Términos también con el teclado (Tab muestra el globo; Enter, como el clic, lleva al glosario).
+  // Términos también con el teclado: Tab muestra el globo.
   document.addEventListener('focusin', function (e) {
     if (e.target.matches('.termino[data-def]')) mostrar(e.target);
   });
   document.addEventListener('focusout', function (e) {
     if (e.target.matches('.termino')) ocultar();
   });
-  function irAlGlosario(e) {
-    var t = e.target.closest && e.target.closest('.termino[data-def]');
-    if (!t || (e.type === 'keydown' && e.key !== 'Enter')) return;
-    ocultar();
-    t.destino.scrollIntoView({ block: 'center' });
-  }
-  document.addEventListener('click', irAlGlosario);
-  document.addEventListener('keydown', irAlGlosario);
   addEventListener('scroll', ocultar, true);
   addEventListener('wheel', ocultar, { passive: true });
   addEventListener('pointerdown', ocultar);

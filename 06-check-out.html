@@ -45,7 +45,7 @@
     <h2>Lo que vas a aprender</h2>
     <ul class="aprenderas">
       <li>Cómo saber quién se va hoy y abrir su reserva.</li>
-      <li>Cómo revisar la cuenta del huésped (el <b>folio</b>) antes de cobrar.</li>
+      <li>Cómo revisar la cuenta del huésped (el <b>folio</b>) y saber si ya pagó.</li>
       <li>Qué forma de pago elegir en la ventana <b>Opciones de salida</b>.</li>
       <li>Cómo cobrar y hacer el check-out con un solo botón.</li>
       <li>Cómo comprobar que la salida quedó hecha.</li>
@@ -108,9 +108,9 @@
         <ul class="leyenda">
           <li><span class="n">1</span><span><b>Nombre, fechas y estado</b>: <b>CHECKED_IN</b> quiere decir que el huésped está alojado.</span></li>
           <li><span class="n">2</span><span><b>Salida</b> y <b>Estado</b>: comprueba que la salida es hoy.</span></li>
-          <li><span class="n">3</span><span><b>Importe total</b> y, debajo, <b>Pago pendiente</b>: el huésped aún debe dinero.</span></li>
+          <li><span class="n">3</span><span><b>Importe total</b> y, debajo, <b>Pago pendiente</b>: el huésped aún debe dinero. Si ya lo pagó todo, aquí diría <b>Pagado por completo</b> (sección 4).</span></li>
           <li><span class="n">4</span><span><b>Resumen de la estancia</b>: de qué sale el total. Aquí, <b>Alojamiento</b> y un extra de <b>Alimentos y bebidas</b>.</span></li>
-          <li><span class="n">5</span><span><span class="boton-ui morado">Check-out</span>: abre la ventana para hacer la salida (sección 4).</span></li>
+          <li><span class="n">5</span><span><span class="boton-ui morado">Check-out</span>: abre la ventana para hacer la salida (sección 5).</span></li>
           <li><span class="n">6</span><span><b>Deshacer check-in</b>: sirve para corregir un check-in hecho por error, por ejemplo a la reserva equivocada. No lo pulses aquí: no registra la salida del huésped, sino que anula su llegada. Para que se vaya, usa <b>Check-out</b>.</span></li>
         </ul>
         <p>El botón <span class="boton-ui morado">Check-out</span> sale el día de salida del huésped. Si el huésped se va antes, en su lugar sale <b>Salida anticipada</b>: avisa a tu supervisor.</p>
@@ -144,12 +144,64 @@
       </div>
     </article>
 
-    <!-- 4. Opciones de salida -->
+    <!-- 4. Ya pagó -->
     <article class="seccion">
       <div class="num">4</div>
       <div class="cuerpo">
-        <h3 class="titulo-seccion">Pulsa Check-out y elige cómo paga</h3>
-        <p>Sube y pulsa <span class="boton-ui morado">Check-out</span>. Se abre la ventana <b>Opciones de salida</b>, con el saldo que falta y tres formas de terminar.</p>
+        <h3 class="titulo-seccion">Comprueba si el huésped ya pagó</h3>
+        <p>Muchos huéspedes ya pagaron antes de irse: en el check-in (tema <a href="05-check-in.html">Hacer el check-in de un huésped</a>), con un anticipo al reservar o a través de una <span class="termino">OTA</span>. A esos huéspedes <b>no se les vuelve a cobrar</b> la habitación. Antes de cobrar, compruébalo en uno de estos tres sitios.</p>
+        <p><b>En el Tapechart (Calendario de reservas)</b>, con el tercer icono, <b>Color por pago</b>, el color de la barra te dice cuánto ha pagado. Lo explica la sección 7 del tema <a href="03-entender-el-tapechart.html">Entender el Tapechart (Calendario de reservas)</a>.</p>
+        <figure class="captura">
+          <a href="img/check-out/08-color-pago.jpg" target="_blank"><div class="lienzo">
+            <img src="img/check-out/08-color-pago.jpg" alt="Tapechart con Color por pago: la barra de Rocío Delgado Ibarra en verde (pagado), la de Luis Herrera Paz en naranja (sin pagar) y la de Marta Gil Ortega en amarillo (pagado parcialmente)" loading="lazy">
+            <span class="marca caja" style="left:4.6%;top:18.4%;width:1.4%;height:3.6%" data-n="1"></span>
+            <span class="marca caja" style="left:20.3%;top:51.8%;width:6.3%;height:3.4%" data-n="2"></span>
+            <span class="marca caja" style="left:20.3%;top:38.2%;width:12.2%;height:3.4%" data-n="3"></span>
+            <span class="marca caja" style="left:44%;top:43.6%;width:30%;height:3.4%" data-n="4"></span>
+          </div></a>
+          <figcaption>Tapechart (Calendario de reservas) con Color por pago. Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Color por pago</b>: el tercer icono.</span></li>
+          <li><span class="n">2</span><span><b>Verde: Pagado</b>. Rocío pagó toda su estancia en el check-in: no le cobres nada.</span></li>
+          <li><span class="n">3</span><span><b>Naranja: Sin pagar</b>. Todavía no ha pagado nada.</span></li>
+          <li><span class="n">4</span><span><b>Amarillo: Pagado parcialmente</b>. Dejó un anticipo: cobra solo lo que falta.</span></li>
+        </ul>
+        <p><b>En la ventana de la reserva</b>, debajo del <b>Importe total</b>:</p>
+        <figure class="captura">
+          <a href="img/check-out/09-pagado-reserva.jpg" target="_blank"><div class="lienzo">
+            <img src="img/check-out/09-pagado-reserva.jpg" alt="Detalles de la reserva y Resumen de la estancia de Rocío Delgado Ibarra: Importe total 1,095 y, debajo, Pagado por completo (1,095 pagado)" loading="lazy">
+            <span class="marca caja" style="left:60.6%;top:40.5%;width:19%;height:24.5%" data-n="1"></span>
+          </div></a>
+          <figcaption>Reserva de prueba ya pagada en el check-in. Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Pagado por completo</b>, en verde, y entre paréntesis lo que ya pagó (<b>$1,095 pagado</b>). Si aún debe algo, aquí dice <b>Pago pendiente</b>, como en la sección 2.</span></li>
+        </ul>
+        <p><b>En el folio</b> (<b>Información de pago</b>, sección 3):</p>
+        <figure class="captura">
+          <a href="img/check-out/10-pagado-folio.jpg" target="_blank"><div class="lienzo">
+            <img src="img/check-out/10-pagado-folio.jpg" alt="Información de pago con estado PAGADO POR COMPLETO, 1,095 de 1,095 pagado, la habitación de 1,095 y un pago en efectivo de 1,095 en Pagos recibidos" loading="lazy">
+            <span class="marca caja" style="left:0.8%;top:14.2%;width:16%;height:12.6%" data-n="1"></span>
+            <span class="marca caja" style="left:1.2%;top:78.2%;width:97.6%;height:19.2%" data-n="2"></span>
+          </div></a>
+          <figcaption>El folio de la reserva de prueba ya pagada. Datos ficticios.</figcaption>
+        </figure>
+        <ul class="leyenda">
+          <li><span class="n">1</span><span><b>Estado del pago</b>: <b>PAGADO POR COMPLETO</b> y, debajo, cuánto ha pagado del total (<b>$1,095 de $1,095 pagado</b>).</span></li>
+          <li><span class="n">2</span><span><b>Pagos recibidos</b>: cada pago que hizo el huésped, con la forma de pago (<b>cash</b> es efectivo), la fecha y el importe. Abajo, <b>Estado del pago: Pagado por completo</b>. No hay <b>Saldo pendiente</b>: no debe nada.</span></li>
+        </ul>
+        <div class="nota ojo"><p><b>Cuidado:</b> cobra siempre el <b>Saldo pendiente</b>, nunca el <b>Importe total</b>. El total incluye lo que el huésped ya pagó: si se lo cobras, paga dos veces.</p></div>
+        <p class="turno"><b>En tu turno:</b> si el huésped te dice «Ya pagué la habitación», compruébalo aquí antes de cobrar. Si ves <b>Pagado por completo</b>, dale las gracias y no le cobres nada.</p>
+      </div>
+    </article>
+
+    <!-- 5. Opciones de salida -->
+    <article class="seccion">
+      <div class="num">5</div>
+      <div class="cuerpo">
+        <h3 class="titulo-seccion">Si aún no ha pagado: pulsa Check-out y elige cómo paga</h3>
+        <p>Esta sección es para el huésped que <b>aún no ha pagado</b> (tiene <b>Saldo pendiente</b>). Sube y pulsa <span class="boton-ui morado">Check-out</span>. Se abre la ventana <b>Opciones de salida</b>, con el saldo que falta y tres formas de terminar.</p>
         <figure class="captura">
           <a href="img/check-out/04-opciones-salida.jpg" target="_blank"><div class="lienzo">
             <img src="img/check-out/04-opciones-salida.jpg" alt="Ventana Opciones de salida con Saldo pendiente 1,205 y las opciones Efectivo recibido, Pagar después y Otro método de pago" loading="lazy">
@@ -168,8 +220,8 @@
           <li><span class="n">2</span><span><b>Saldo pendiente</b>: lo que vas a cobrar.</span></li>
           <li><span class="n">3</span><span><b>Efectivo recibido</b>: el huésped paga todo en efectivo. Viene marcada.</span></li>
           <li><span class="n">4</span><span><b>Pagar después</b>: el huésped se va sin pagar (ver el aviso de abajo).</span></li>
-          <li><span class="n">5</span><span><b>Otro método de pago</b>: tarjeta de crédito o débito, transferencia y otros. El botón cambia a <b>Continuar al pago</b> (sección 5).</span></li>
-          <li><span class="n">6</span><span><b>Registrar pago en efectivo y hacer salida</b>: con <b>Efectivo recibido</b>, este botón registra el pago y hace el check-out a la vez. Después, salta a la sección 6.</span></li>
+          <li><span class="n">5</span><span><b>Otro método de pago</b>: tarjeta de crédito o débito, transferencia y otros. El botón cambia a <b>Continuar al pago</b> (sección 6).</span></li>
+          <li><span class="n">6</span><span><b>Registrar pago en efectivo y hacer salida</b>: con <b>Efectivo recibido</b>, este botón registra el pago y hace el check-out a la vez. Después, salta a la sección 7.</span></li>
           <li><span class="n">7</span><span><b>Aplicar ajuste</b>: no lo uses en un check-out normal. Pregunta a tu supervisor.</span></li>
         </ul>
         <div class="nota ojo"><p><b>Cuidado:</b> con <b>Pagar después</b>, FrontDesko pide un <b>Motivo para pagar después</b> (por ejemplo, facturación a una empresa) y el botón cambia a <b>Salida con pago pendiente</b>. El huésped se va debiendo dinero: úsalo solo si tu supervisor lo autoriza.</p></div>
@@ -177,9 +229,9 @@
       </div>
     </article>
 
-    <!-- 5. Cobro con tarjeta -->
+    <!-- 6. Cobro con tarjeta -->
     <article class="seccion">
-      <div class="num">5</div>
+      <div class="num">6</div>
       <div class="cuerpo">
         <h3 class="titulo-seccion">Si paga con tarjeta: cobra y haz el check-out</h3>
         <p>Con <b>Otro método de pago</b> marcado, pulsa <b>Continuar al pago</b>. Se abre la ventana <b>Check-out y pago</b>. Rellena los datos del cobro y pulsa <span class="boton-ui verde">Cobrar y hacer check-out</span>.</p>
@@ -205,15 +257,15 @@
           <li><span class="n">6</span><span><span class="boton-ui verde">Cobrar y hacer check-out</span>: guarda el pago y hace el check-out. Sale en gris hasta que eliges el método y escribes el importe.</span></li>
           <li><span class="n">7</span><span><b>Check-out exprés</b>: el otro botón de check-out. En este manual usamos <b>Cobrar y hacer check-out</b>. Pregunta a tu supervisor antes de usar este.</span></li>
         </ul>
-        <div class="nota ojo"><p><b>Cuidado:</b> aquí el <b>Importe</b> empieza en <b>0.00</b>, no con el saldo. Escríbelo tú, copiando el <b>Saldo pendiente</b> de la sección 4.</p></div>
+        <div class="nota ojo"><p><b>Cuidado:</b> aquí el <b>Importe</b> empieza en <b>0.00</b>, no con el saldo. Escríbelo tú, copiando el <b>Saldo pendiente</b> de la sección 5.</p></div>
         <div class="nota ojo"><p><b>Cuidado:</b> cobra primero en la terminal y espera a que la tarjeta salga aprobada. Después pulsa el botón. FrontDesko registra el pago, pero no cobra por ti.</p></div>
         <p class="turno"><b>En tu turno:</b> di el importe en voz alta antes de pasar la tarjeta: «Son 1,205 pesos».</p>
       </div>
     </article>
 
-    <!-- 6. Comprobar -->
+    <!-- 7. Comprobar -->
     <article class="seccion">
-      <div class="num">6</div>
+      <div class="num">7</div>
       <div class="cuerpo">
         <h3 class="titulo-seccion">Comprueba que el check-out quedó hecho</h3>
         <p>Abajo salen avisos verdes: <b>Pago añadido</b> y <b>Check-out realizado</b>. La reserva cambia de estado.</p>
@@ -259,7 +311,7 @@
     <h2>El check-out de principio a fin</h2>
     <ol class="flujo">
       <li><b>Reserva</b>Clic en la barra azul del huésped</li>
-      <li><b>Folio</b>Revisa los cargos con el huésped</li>
+      <li><b>Folio</b>Revisa los cargos y si ya pagó</li>
       <li><b>Forma de pago</b>Efectivo, tarjeta u otro</li>
       <li><b>Cobro</b>Cobra y haz el check-out con un botón</li>
       <li><b>Salida</b>CHECKED_OUT, barra verde agua y habitación por limpiar</li>
@@ -274,6 +326,7 @@
       <dt>Alojado</dt><dd>Huésped que ya hizo el check-in y está en el hotel. FrontDesko lo marca como <b>CHECKED_IN</b> y su barra sale en azul.</dd>
       <dt>Folio</dt><dd>La cuenta del huésped: todos los cargos de su estancia (habitación, impuestos y extras) y los pagos que hizo.</dd>
       <dt>Saldo pendiente</dt><dd>Lo que el huésped aún debe. Cuando se cobra todo, sale <b>Pagado por completo</b>.</dd>
+      <dt>OTA</dt><dd>Agencia de viajes en internet, como Booking.com o Expedia. El huésped reserva allí y a veces también paga allí.</dd>
       <dt>UTI</dt><dd>Identificador único de transacción: el número de la operación de pago, por ejemplo el del comprobante de la terminal. Es opcional.</dd>
       <dt>Por limpiar</dt><dd>Habitación que hay que limpiar antes de darla a otro huésped. Su número sale en naranja en el Tapechart (Calendario de reservas).</dd>
     </dl>
@@ -284,6 +337,8 @@
     <p>Intenta responder antes de abrir cada respuesta.</p>
     <details><summary>¿Dónde ves cuántos huéspedes se van hoy?</summary>Arriba del <b>Tapechart (Calendario de reservas)</b>, en <b>Salidas de hoy</b>. Al lado dice cuántos ya tienen el check-out hecho.</details>
     <details><summary>¿Qué revisas con el huésped antes de cobrar?</summary>El <b>folio</b>, en <b>Información de pago</b>: cada cargo y el <b>Saldo pendiente</b>.</details>
+    <details><summary>El huésped dice que ya pagó la habitación en el check-in. ¿Cómo lo compruebas?</summary>En su reserva, debajo del <b>Importe total</b>, o en el folio: si sale <b>Pagado por completo</b>, no debe nada y no le cobras otra vez. En el Tapechart (Calendario de reservas), con <b>Color por pago</b>, su barra sale en verde.</details>
+    <details><summary>El huésped dejó un anticipo. ¿Cuánto le cobras al irse?</summary>Solo el <b>Saldo pendiente</b>, nunca el <b>Importe total</b>: el total incluye lo que ya pagó.</details>
     <details><summary>El huésped paga con tarjeta. ¿Qué opción eliges en Opciones de salida?</summary><b>Otro método de pago</b> y después <b>Continuar al pago</b>. Ahí eliges <b>Pago con tarjeta</b> y escribes el importe.</details>
     <details><summary>En la ventana Check-out y pago, el importe sale en 0.00. ¿Qué haces?</summary>Escribe el <b>Saldo pendiente</b> que viste en <b>Opciones de salida</b>.</details>
     <details><summary>¿Cómo sabes que el check-out quedó hecho?</summary>El estado pasa a <b>CHECKED_OUT</b>, sale <b>Pagado por completo</b> y en el Tapechart (Calendario de reservas) la barra se vuelve <b>verde agua</b> y la habitación <b>naranja</b>.</details>
